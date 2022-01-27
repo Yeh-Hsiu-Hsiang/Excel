@@ -32,18 +32,19 @@
 >   SUBSTITUTE(text, old_text, new_text, [instance_num])
 
 ## ADDRESS
->   ADDRESS(row_num, column_num, [abs_num], [a1], [sheet_text])
-    >>  abs_num：選擇性。 指定要傳回之參照類型的數值。
-        >>>   |  abs_num |  傳回此參照類型 |  
-        >>>   |  :-----: | :-----: |  
-        >>>   |   1 或省略  |  絕對參照  |
-        >>>   |   2  |  相對列；絕對欄  |
-        >>>   |   3  |  絕對列；相對欄  |
-        >>>   |   4  |  相對參照  |
-    >
-    >>  A1：選擇性。指定 A1 或 R1C1 欄名列號表示法的邏輯值。  
-    >   
-    >>  sheet_text：選擇性。文字值，指定要用作外部參考之工作表的名稱。
+>   ADDRESS(row_num, column_num, [abs_num], [a1], [sheet_text])  
+>    >  abs_num：選擇性。 指定要傳回之參照類型的數值。 
+>    >   
+>   |  abs_num |  傳回此參照類型 |  
+>   |  :-----: | :-----: |  
+>   |   1 或省略  |  絕對參照  |  
+>   |   2  |  相對列；絕對欄  |  
+>   |   3  |  絕對列；相對欄  |  
+>   |   4  |  相對參照  |  
+>    >
+>    >  A1：選擇性。指定 A1 或 R1C1 欄名列號表示法的邏輯值。  
+>    >   
+>    >  sheet_text：選擇性。文字值，指定要用作外部參考之工作表的名稱。
 
 ## OFFSET
 >   OFFSET(reference, rows, cols, [height], [width])
@@ -68,7 +69,7 @@
 
 ## SUBTOTAL
 >   SUBTOTAL(function_num,ref1,[ref2],...)
-    >>  Function_num：必要。數字 1-11 或 101-111 指定要用於計算小計的函數。  
+>    >  Function_num：必要。數字 1-11 或 101-111 指定要用於計算小計的函數。  
 >   
 >   |  Function_num (包含隱藏的列)  |  Function_num (忽略隱藏列) |  函數  |
 >   |  :-----: | :-----: |  :-----: |  
