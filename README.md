@@ -22,6 +22,9 @@
 ## COUNTIF
 >   COUNTIF(range, criteria)
 
+## COUNTIFS
+>   COUNTIFS(criteria_range1, criteria1, [criteria_range2, criteria2]…)
+
 ## FIND
 >   FIND(find_text, within_text, [start_num])
 
@@ -30,6 +33,14 @@
 
 ## ADDRESS
 >   ADDRESS(row_num, column_num, [abs_num], [a1], [sheet_text])
+    >>  abs_num：選擇性。 指定要傳回之參照類型的數值。
+        >>>   |  abs_num |  傳回此參照類型 |  
+        >>>   |  :-----: | :-----: |  
+        >>>   |   1 或省略  |  絕對參照  |
+        >>>   |   2  |  相對列；絕對欄  |
+        >>>   |   3  |  絕對列；相對欄  |
+        >>>   |   4  |  相對參照  |
+    >
     >>  A1：選擇性。指定 A1 或 R1C1 欄名列號表示法的邏輯值。  
     >   
     >>  sheet_text：選擇性。文字值，指定要用作外部參考之工作表的名稱。
@@ -55,11 +66,30 @@
 >   |   -1  |  十位數  |
 >   |   -2  |  百位數  |
 
+## SUBTOTAL
+>   SUBTOTAL(function_num,ref1,[ref2],...)
+    >>  Function_num：必要。數字 1-11 或 101-111 指定要用於計算小計的函數。  
+>   
+>   |  Function_num (包含隱藏的列)  |  Function_num (忽略隱藏列) |  函數  |
+>   |  :-----: | :-----: |  :-----: |  
+>   |   1  |  101  |    AVERAGE     |
+>   |   2  |  102  |    COUNT       |
+>   |   3  |  103  |    COUNTA      |
+>   |   4  |  104  |    MAX     |
+>   |   5  |  105  |    MIN     |
+>   |   6  |  106  |    PRODUCT     |
+>   |   7  |  107  |    STDEV       |
+>   |   8  |  108  |    STDEVP      |
+>   |   9  |  109  |    SUM     |
+>   |   10  |  110  |   VAR     |
+>   |   11  |  111  |   VARP        |
 
 
 
 ---
-參考資料：
+參考資料：  
 [IS 函數](https://support.microsoft.com/zh-tw/office/is-%E5%87%BD%E6%95%B8-0f2d7971-6019-40a0-a171-f2d869135665)  
 [Excel REPLACE 與 SUBSTITUTE 函數用法教學：字串取代，自動修改文字資料](https://blog.gtwang.org/windows/excel-replace-substitute-function-tutorial/)  
 [ADDRESS 函數](https://support.microsoft.com/zh-tw/office/address-%E5%87%BD%E6%95%B8-d0c26c0d-3991-446b-8de4-ab46431d4f89)  
+[SUBTOTAL 函數](https://support.microsoft.com/zh-tw/office/subtotal-%E5%87%BD%E6%95%B8-7b027003-f060-4ade-9040-e478765b9939)  
+
