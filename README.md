@@ -17,13 +17,17 @@
 
 ## ISNA
 >   =ISNA(A6)
-    >>  檢查儲存格 A6 中的值 - #N/A 是否為 #N/A 錯誤。
+>   >  檢查儲存格 A6 中的值 - #N/A 是否為 #N/A 錯誤。
 
 ## COUNTIF
 >   COUNTIF(range, criteria)
 
 ## COUNTIFS
 >   COUNTIFS(criteria_range1, criteria1, [criteria_range2, criteria2]…)
+>   
+>   ## 流水號
+>   ```TEXT(COUNTIF($C$2:C2, C2), "000")```  
+>   →　計算從儲存格 C2 以下的儲存格範圍，共有幾個和 C 欄各列相同的內容，這個數量即為其流水號。
 
 ## FIND
 >   FIND(find_text, within_text, [start_num])  
