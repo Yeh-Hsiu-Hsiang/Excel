@@ -26,7 +26,14 @@
 >   COUNTIFS(criteria_range1, criteria1, [criteria_range2, criteria2]…)
 
 ## FIND
->   FIND(find_text, within_text, [start_num])
+>   FIND(find_text, within_text, [start_num])  
+>    
+>   >   ## Ex: 2022/1/20_AZ_1_2_3 要分成施打日、施打疫苗種類、第幾劑  
+>   >   施打日：```=LEFT($G3, FIND("_",$G3)-1)```  
+>   >   疫苗種類：```=MID($G3, FIND("_",$G3)+1, (FIND( "_", $G3, FIND("_", $G3)+1))-(FIND("_",$G3)+1))```  
+>   >   第幾劑：```=MID($G3, FIND("_", $G3, FIND("_", $G3)+1)+1, 5)```  
+>   >   →　FIND("_",$G3)：找到第一個 _ 的位置。  
+>   >   →　FIND("_", $G3)+1：找到第二個 _ 的位置。  
 
 ## SUBSTITUTE
 >   SUBSTITUTE(text, old_text, new_text, [instance_num])
@@ -92,5 +99,6 @@
 [IS 函數](https://support.microsoft.com/zh-tw/office/is-%E5%87%BD%E6%95%B8-0f2d7971-6019-40a0-a171-f2d869135665)  
 [Excel REPLACE 與 SUBSTITUTE 函數用法教學：字串取代，自動修改文字資料](https://blog.gtwang.org/windows/excel-replace-substitute-function-tutorial/)  
 [ADDRESS 函數](https://support.microsoft.com/zh-tw/office/address-%E5%87%BD%E6%95%B8-d0c26c0d-3991-446b-8de4-ab46431d4f89)  
+[聯成電腦分享：Excel擷取所需字元、字串（下）](https://www.lccnet.com.tw/lccnet/article/details/1958)  
 [SUBTOTAL 函數](https://support.microsoft.com/zh-tw/office/subtotal-%E5%87%BD%E6%95%B8-7b027003-f060-4ade-9040-e478765b9939)  
 
