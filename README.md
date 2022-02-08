@@ -29,6 +29,9 @@
 >   ```TEXT(COUNTIF($C$2:C2, C2), "000")```  
 >   →　計算從儲存格 C2 以下的儲存格範圍，共有幾個和 C 欄各列相同的內容，這個數量即為其流水號。
 
+# VLOOKUP 
+>   VLOOKUP (lookup_value, table_array, col_index_num, [range_lookup])
+
 ## FIND
 >   FIND(find_text, within_text, [start_num])  
 >    
@@ -101,8 +104,7 @@
 ---
 參考資料：  
 [IS 函數](https://support.microsoft.com/zh-tw/office/is-%E5%87%BD%E6%95%B8-0f2d7971-6019-40a0-a171-f2d869135665)  
-[Excel REPLACE 與 SUBSTITUTE 函數用法教學：字串取代，自動修改文字資料](https://blog.gtwang.org/windows/excel-replace-substitute-function-tutorial/)  
-[ADDRESS 函數](https://support.microsoft.com/zh-tw/office/address-%E5%87%BD%E6%95%B8-d0c26c0d-3991-446b-8de4-ab46431d4f89)  
+[Excel REPLACE 與 SUBSTITUTE 函數用法教學：字串取代，自動修改文字資料](https://blog.gtwang.org/windows/excel-replace-substitute-function-tutorial/)    
 [聯成電腦分享：Excel擷取所需字元、字串（下）](https://www.lccnet.com.tw/lccnet/article/details/1958)  
 [SUBTOTAL 函數](https://support.microsoft.com/zh-tw/office/subtotal-%E5%87%BD%E6%95%B8-7b027003-f060-4ade-9040-e478765b9939)  
-
+[有重複值又如何？VLOOKUP同樣輕鬆查找！](https://kknews.cc/career/vvbl5ll.html)
