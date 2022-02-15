@@ -1,34 +1,30 @@
-Attribute VB_Name = "Module1"
-Sub §PÂ_sheet¬O§_¦s¦b()
-Attribute §PÂ_sheet¬O§_¦s¦b.VB_ProcData.VB_Invoke_Func = " \n14"
 
+Sub åˆ¤æ–·sheetæ˜¯å¦å­˜åœ¨()
 
-    Workbooks.Open Filename:="\\yeawen\files-server\10_¤½¥Î\00_i-Reporter ¦æ°Êªí³æ¨t²Î\³]­pÀÉ®×¸ê®Æ\«~«O½Ò\¥[¤u«~«O\test.xlsx"  '¶}±ÒÀÉ®×
-
+    Workbooks.Open Filename:="\\yeawen\files-server\10_å…¬ç”¨\00_i-Reporter è¡Œå‹•è¡¨å–®ç³»çµ±\è¨­è¨ˆæª”æ¡ˆè³‡æ–™\å“ä¿èª²\åŠ å·¥å“ä¿\test.xlsx"  'é–‹å•Ÿæª”æ¡ˆ
 
     Dim ws As Worksheet
     Dim my_ws As String
     
-    my_ws = "¥[¤uQCÀËÅç¶µ¥Øªí"
+    my_ws = "åŠ å·¥QCæª¢é©—é …ç›®è¡¨"
     
     For Each ws In Worksheets
-        If LCase(ws.Name) = LCase(my_ws) Then   '§PÂ_¬O§_¤w¦s¦b¤u§@ªí¡A¤w¦s¦b¥ı§R°£ÂÂªº¦A½Æ»s
-            Application.DisplayAlerts = False   'Ãö³¬§R°£³qª¾
-            Sheets("¥[¤uQCÀËÅç¶µ¥Øªí").Select
-            ActiveWindow.SelectedSheets.Delete  '§R°£Sheets
-            Application.DisplayAlerts = True    '¶}±Ò§R°£³qª¾
+        If LCase(ws.Name) = LCase(my_ws) Then   'åˆ¤æ–·æ˜¯å¦å·²å­˜åœ¨å·¥ä½œè¡¨ï¼Œå·²å­˜åœ¨å…ˆåˆªé™¤èˆŠçš„å†è¤‡è£½
+            Application.DisplayAlerts = False   'é—œé–‰åˆªé™¤é€šçŸ¥
+            Sheets("åŠ å·¥QCæª¢é©—é …ç›®è¡¨").Select
+            ActiveWindow.SelectedSheets.Delete  'åˆªé™¤Sheets
+            Application.DisplayAlerts = True    'é–‹å•Ÿåˆªé™¤é€šçŸ¥
             
             'Debug.Print ("already exist")
             
-            Workbooks("¬¡­¶Ã¯1").Activate   '«ü©w·í«e¬¡­¶Ã¯
-            Sheets("¥[¤uQCÀËÅç¶µ¥Øªí").Copy Before:=Workbooks("test.xlsx").Sheets(1)    '½Æ»s¤u§@ªí
-            ActiveWorkbook.Close True   'Ãö³¬¨Ã¦sÀÉ
+            Workbooks("æ´»é ç°¿1").Activate   'æŒ‡å®šç•¶å‰æ´»é ç°¿
+            Sheets("åŠ å·¥QCæª¢é©—é …ç›®è¡¨").Copy Before:=Workbooks("test.xlsx").Sheets(1)    'è¤‡è£½å·¥ä½œè¡¨
+            ActiveWorkbook.Close True   'é—œé–‰ä¸¦å­˜æª”
         
-        Else    '­Y¤£¦s¦bª½±µ·s¼W
-            Workbooks("¬¡­¶Ã¯1").Activate
-            Sheets("¥[¤uQCÀËÅç¶µ¥Øªí").Copy Before:=Workbooks("test.xlsx").Sheets(1)
+        Else    'è‹¥ä¸å­˜åœ¨ç›´æ¥æ–°å¢
+            Workbooks("æ´»é ç°¿1").Activate
+            Sheets("åŠ å·¥QCæª¢é©—é …ç›®è¡¨").Copy Before:=Workbooks("test.xlsx").Sheets(1)
             ActiveWorkbook.Close True
         End If
-    Next
-        
+    Next  
 End Sub
