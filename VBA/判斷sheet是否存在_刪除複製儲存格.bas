@@ -1,35 +1,34 @@
-Attribute VB_Name = "§PÂ_sheet¬O§_¦s¦b"
-Sub §PÂ_sheet¬O§_¦s¦b()
+Sub åˆ¤æ–·sheetæ˜¯å¦å­˜åœ¨()
 
-    Workbooks.Open Filename:="\\yeawen\files-server\10_¤½¥Î\00_i-Reporter ¦æ°Êªí³æ¨t²Î\³]­pÀÉ®×¸ê®Æ\«~«O½Ò\¥[¤u«~«O\test.xlsx"  '¶}±ÒÀÉ®×
+    Workbooks.Open Filename:="\\yeawen\files-server\10_å…¬ç”¨\00_i-Reporter è¡Œå‹•è¡¨å–®ç³»çµ±\è¨­è¨ˆæª”æ¡ˆè³‡æ–™\å“ä¿èª²\åŠ å·¥å“ä¿\test.xlsx"  'é–‹å•Ÿæª”æ¡ˆ
 
     Dim ws As Worksheet
     Dim my_ws1, my_ws2, my_ws3, my_ws4 As String
     
-    my_ws1 = "¥[¤uQCÀËÅç¶µ¥Øªí"
-    my_ws2 = "¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı"
-    my_ws3 = "¤uµ{³]ÅÜ"
-    my_ws4 = "­û¤u¦W¥U"
+    my_ws1 = "åŠ å·¥QCæª¢é©—é …ç›®è¡¨"
+    my_ws2 = "ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„"
+    my_ws3 = "å·¥ç¨‹è¨­è®Š"
+    my_ws4 = "å“¡å·¥åå†Š"
     
     For Each ws In Worksheets
-        If LCase(ws.Name) = LCase(my_ws2) Then   '§PÂ_¬O§_¤w¦s¦b¤u§@ªí¡A¤w¦s¦bª½±µ½Æ»s¶K¤W
+        If LCase(ws.Name) = LCase(my_ws2) Then   'åˆ¤æ–·æ˜¯å¦å·²å­˜åœ¨å·¥ä½œè¡¨ï¼Œå·²å­˜åœ¨ç›´æ¥è¤‡è£½è²¼ä¸Š
             
-            Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Range("D2", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '²MªÅÂÂ¦³¸ê®Æ
+            Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Range("D2", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents 'æ¸…ç©ºèˆŠæœ‰è³‡æ–™
             
-            Workbooks("«~«OIPQC_FQC¤é³ø¨t²Î(²Õ¥ß20210305.xlsm").Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Activate   '«ü©w·í«e¬¡­¶Ã¯¡B¤u§@ªí
-            ActiveSheet.Range("D1", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).Select   '¿ï¨ú­n½Æ»sªº½d³ò
-            Selection.Copy  '½Æ»s
-            Workbooks("test.xlsx").Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Activate   '¿ï¾Ü­n¶K¤Wªº¦ì¸m
-            ActiveSheet.Range("D2", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).Select   '¿ï¨ú­n¶K¤Wªº½d³ò
-            Selection.PasteSpecial  '¶K¤W
+            Workbooks("å“ä¿IPQC_FQCæ—¥å ±ç³»çµ±(çµ„ç«‹20210305.xlsm").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'æŒ‡å®šç•¶å‰æ´»é ç°¿ã€å·¥ä½œè¡¨
+            ActiveSheet.Range("D1", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).Select   'é¸å–è¦è¤‡è£½çš„ç¯„åœ
+            Selection.Copy  'è¤‡è£½
+            Workbooks("test.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'é¸æ“‡è¦è²¼ä¸Šçš„ä½ç½®
+            ActiveSheet.Range("D2", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).Select   'é¸å–è¦è²¼ä¸Šçš„ç¯„åœ
+            Selection.PasteSpecial  'è²¼ä¸Š
             
-            ' ±Æ§Ç D Äæ¦Ü L Äæªº¸ê®Æ
-            ' Key1:=Range("E1")     ¨Ì¾Ú E Äæ±Æ§Ç
-            ' Order1:=xlDescending  ­°¾­±Æ§Ç
-            ' Header:=xlYes         ¦³¼ĞÃD¦C
-            Columns("D:L").Sort Key1:=Range("E1"), Order1:=xlDescending, Header:=xlYes  '¨Ì·Ó¤é´Á±Æ§Ç
+            ' æ’åº D æ¬„è‡³ L æ¬„çš„è³‡æ–™
+            ' Key1:=Range("E1")     ä¾æ“š E æ¬„æ’åº
+            ' Order1:=xlDescending  é™å†ªæ’åº
+            ' Header:=xlYes         æœ‰æ¨™é¡Œåˆ—
+            Columns("D:L").Sort Key1:=Range("E1"), Order1:=xlDescending, Header:=xlYes  'ä¾ç…§æ—¥æœŸæ’åº
             
-            ActiveWorkbook.Close True   'Ãö³¬¨Ã¦sÀÉ
+            ActiveWorkbook.Close True   'é—œé–‰ä¸¦å­˜æª”
         End If
     Next
 End Sub
