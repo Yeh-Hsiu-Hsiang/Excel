@@ -56,7 +56,11 @@ x = 1 + 2 + 3 + _
 ## Rows 列  
 >   ```Rows(1) '=Rows("1")```  
 >   ```Rows("1:3") '代表第一到第三列```   
->   ```Cells(ActiveSheet.Rows.Count, 1).End(xlUp).Row   '最後一列``` 
+>   ```Cells(ActiveSheet.Rows.Count, 1).End(xlUp).Row   '最後一列```   
+>   Ex:  
+>   ```
+>   Range("D65536").End(xlUp).Row    '找到D欄最後一列
+>   ```
 
 ## Columns 欄
 >   ```Cells(1, ActiveSheet.Columns.Count).End(xlToLeft).Column '最後一欄```  
@@ -81,65 +85,49 @@ x = 1 + 2 + 3 + _
 
 ## 活頁簿
 >   ```VBA
->   '開啟舊活頁簿
->   Workbooks.Open "C:VBAdemo.xlsx" 
+>   Workbooks.Open "C:VBAdemo.xlsx" '開啟舊活頁簿
 >
->   '開啟新活頁簿
->   WorkBooks.Add
+>   WorkBooks.Add   '開啟新活頁簿
 >
->   '活頁簿名稱
->   Workbooks(1).Name  
+>   Workbooks(1).Name   '活頁簿名稱
 >
->   '目前活頁簿數量
->   Workbooks.Count 
+>   Workbooks.Count '目前活頁簿數量
 >
->   '儲存活頁簿
->   Workbooks("demo").Save 
+>   Workbooks("demo").Save  '儲存活頁簿
 >
->   '第一本活頁簿儲存
->   WorkBook(1).Save
+>   WorkBook(1).Save    '第一本活頁簿儲存
 >   
->   '另存活頁簿
->   Workbooks("demo").SaveAs "C:VBAanother.xlsx"  
+>   Workbooks("demo").SaveAs "C:VBAanother.xlsx"    '另存活頁簿
 >
->   'Activate可以指定當前活頁簿
->   Workbooks("demo").Activate  
+>   Workbooks("demo").Activate  'Activate可以指定當前活頁簿
 >
->   '當前視窗活頁簿
->   ActiveWorkbook
+>   ActiveWorkbook  '當前視窗活頁簿
 >
->   '第二本活頁簿拉到當前視窗
->   WorkBook(2).Activate
+>   WorkBook(2).Activate    '第二本活頁簿拉到當前視窗
 >
->   '關閉活頁簿
->   Workbooks("demo").Close 
+>   Workbooks("demo").Close '關閉活頁簿
 >
->   '關閉所有活頁簿，但留下主視窗
->   Workbooks.Close 
+>   Workbooks.Close '關閉所有活頁簿，但留下主視窗
 >
->   '關閉整個 Excel
->   Application.Quit    
+>   Application.Quit    '關閉整個 Excel
 >   ```
 
 ## 工作表
 >   ```VBA
->   '正在使用的工作表
->   ActiveSheet
+>   ActiveSheet '正在使用的工作表
 >
->   '工作表
->   Worksheet 
+>   Worksheet   '工作表
 >
->   '所有工作表
->   WorkSheets
+>   WorkSheets  '所有工作表
 >
->   '新增工作表
->   Worksheets.Add
+>   Worksheets.Add  '新增工作表
 >
->   '改第一個工作表名稱
->   Worksheets(1).Name = "新的工作表"
+>   Worksheets(1).Name = "新的工作表"   '改第一個工作表名稱
 >
->   '開第一個工作表
->   WorkSheets(1).Activate
+>   WorkSheets(1).Activate  '當前工作表
+>   
+>   Ex:
+>   Worksheets("活頁簿1").Activate
 >   ```
 
 
@@ -151,50 +139,38 @@ x = 1 + 2 + 3 + _
 >   ```
 >   ---
 >   ```VBA
->   'A1的值等於B1的欄位 => A1=2  
->   Range("A1") = Range("B1").Column  
+>   Range("A1") = Range("B1").Column    'A1的值等於B1的欄位 => A1=2  
 > 
->   'C1的值等於第一個工作表的名字 => C1=工作表1  
->   Range("C1") = Worksheets(1).Name  
+>   Range("C1") = Worksheets(1).Name    'C1的值等於第一個工作表的名字 => C1=工作表1  
 > 
->   'D1的值等於E1~E5的格數 => D1=5  
->   Range("D1") = Range("E1","E5").Count 
+>   Range("D1") = Range("E1","E5").Count    'D1的值等於E1~E5的格數 => D1=5  
 >   ``` 
 
 ## 常用文字設定
 >   ```VBA
->   '粗體字
->   Range("A1").Font.Bold = true
+>   Range("A1").Font.Bold = true    '粗體字
 > 
->   '設定字體大小
->   Range("B1").Font.Size = 20
+>   Range("B1").Font.Size = 20  '設定字體大小
 > 
->   '設定欄位顏色(顏色使用RGB表示)
->   Range("C1").Interior.Color=RGB(0,255,0)
+>   Range("C1").Interior.Color=RGB(0,255,0) '設定欄位顏色(顏色使用RGB表示)
 > 
->   '設定字體顏色
->   Range("D1").Font.Color = RGB(255, 0, 0)
+>   Range("D1").Font.Color = RGB(255, 0, 0) '設定字體顏色
 > 
->   '外框設定成雙框線
->   Range("E1").Borders.LineStyle = xlDouble
+>   Range("E1").Borders.LineStyle = xlDouble    '外框設定成雙框線
 > 
->   '改變欄位寬度
->   Range("F1").ColumnWidth = 30
+>   Range("F1").ColumnWidth = 30    '改變欄位寬度
 > 
->   '自動調整欄寬(需整欄選取 如果沒有資料則看不出變化)
->   Range("G1").EntireColumn.AutoFit
+>   Range("G1").EntireColumn.AutoFit    '自動調整欄寬(需整欄選取 如果沒有資料則看不出變化)
 > 
->   '清除資料內容
->   Range("H1").ClearContents 
+>   Range("H1").ClearContents   '清除資料內容
 > 
->   '清除資料格式
->   Range("I1").ClearFormats
+>   Range("I1").ClearFormats    '清除資料格式
 >   ```
 
 ## 複製、貼上
 >   ```VBA
->   Range("A1:A2").Select   '要複製的範圍先選取起來
->   Selection.Copy  '將選取的儲存格複製起來
+>   Range("A1:A2").Select   '選取要複製的範圍
+>   Selection.Copy  '複製
 >   Range("C3").Select  '選擇要貼上的位置
 >   ActiveSheet.Paste   '貼上
 >   ```
@@ -207,8 +183,8 @@ x = 1 + 2 + 3 + _
 >   ```
 >   **PasteSpecial 後面還能附加動作**
 > 
->   ```.PasteSpecial xlPasteFormats '只會複製格式```  
->   ```.PasteSpecial xlPasteValues '只會複製值```  
+>   ```.PasteSpecial xlPasteFormats '只會貼上格式```  
+>   ```.PasteSpecial xlPasteValues '只會貼上值```  
 >   其他請參考 [XlPasteType 列舉 (Excel)](https://docs.microsoft.com/zh-tw/office/vba/api/Excel.XlPasteType)
 
 ## 錯誤處理（Error Handling）
@@ -233,18 +209,8 @@ x = 1 + 2 + 3 + _
 >   ```
 >
 
-## 自己寫的小程式
->   ```VBA
->   Sub time()
->   Dim now_address As Range
->   'Set now_address = ActiveCell    '設定目前儲存格位置（單一）
->   Set now_address_Range = Selection   '設定目前選取儲存格位置（範圍）
->   now_address.Value = "19:00" 
->   End Sub
->   ```
-
 ---
-參考資料：
+參考資料：  
 [VBA 程式設計](https://blog.gtwang.org/programming/vba/)  
 [EXCEL VBA從頭來過-基本語法(上篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%8A%E7%AF%87-c2bc76065ecd)  
 [EXCEL VBA從頭來過-基本語法(中篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%AD%E7%AF%87-4dda73e44eaf)  
