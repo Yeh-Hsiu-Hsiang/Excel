@@ -18,7 +18,7 @@ Sub 判斷sheet是否存在()
             Workbooks("品保IPQC_FQC日報系統(組立20210305.xlsm").Worksheets("生產異常狀況分析追蹤紀錄").Activate   '指定當前活頁簿、工作表
             ActiveSheet.Range("D1", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).Select   '選取要複製的範圍
             Selection.Copy  '複製
-            Workbooks("test.xlsx").Worksheets("生產異常狀況分析追蹤紀錄").Activate   '選擇要貼上的位置
+            Workbooks("test.xlsx").Worksheets("生產異常狀況分析追蹤紀錄").Activate   '選擇要貼上的活頁簿、工作表
             ActiveSheet.Range("D2", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).Select   '選取要貼上的範圍
             Selection.PasteSpecial  '貼上
             
