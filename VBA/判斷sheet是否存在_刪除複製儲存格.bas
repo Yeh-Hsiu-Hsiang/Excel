@@ -13,6 +13,7 @@ Sub 判斷sheet是否存在()
     For Each ws In Worksheets
         If LCase(ws.Name) = LCase(my_ws2) Then   '判斷是否已存在工作表，已存在直接複製貼上
             
+            Workbooks("test.xlsx").Worksheets("生產異常狀況分析追蹤紀錄").Activate   '指定當前活頁簿、工作表
             Worksheets("生產異常狀況分析追蹤紀錄").Range("D2", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
             
             Workbooks("品保IPQC_FQC日報系統(組立20210305.xlsm").Worksheets("生產異常狀況分析追蹤紀錄").Activate   '指定當前活頁簿、工作表
