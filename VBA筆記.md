@@ -97,28 +97,27 @@ x = 1 + 2 + 3 + _
 >   ```VBA
 >   Workbooks.Open "C:VBAdemo.xlsx" '開啟舊活頁簿
 >
->   WorkBooks.Add   '開啟新活頁簿
+>   WorkBooks.Add   '開新活頁簿
 >
 >   Workbooks(1).Name   '活頁簿名稱
 >
 >   Workbooks.Count '目前活頁簿數量
 >
->   Workbooks("demo").Save  '儲存活頁簿
+>   Workbooks("book1.xlsm").Protect "password"  '加密活頁簿
+>   Workbooks("book1.xlsm").Unprotect "password"    '解密活頁簿
 >
+>   Workbooks("demo").Save  '儲存活頁簿
 >   WorkBook(1).Save    '第一本活頁簿儲存
->   
->   Workbooks("demo").SaveAs "C:VBAanother.xlsx"    '另存活頁簿
+>   Workbooks("demo").SaveAs "C:\Users\StevePC2\Downloads\new.xlsm"    '另存活頁簿
+>   ActiveWorkbook.SaveAs Filename:= "C:\new.xlsx", WriteRes:= "password"   '另存成輸入密碼才能進行編輯的活頁簿
 >
 >   Workbooks("demo").Activate  'Activate可以指定當前活頁簿
->
 >   ActiveWorkbook  '當前視窗活頁簿
->
 >   WorkBook(2).Activate    '第二本活頁簿拉到當前視窗
 >
 >   Workbooks("demo").Close '關閉活頁簿
->
+>   ActiveWorkbook.Close SaveChanges:=True  '關閉活頁簿並保存
 >   Workbooks.Close '關閉所有活頁簿，但留下主視窗
->
 >   Application.Quit    '關閉整個 Excel
 >   ```
 
@@ -135,7 +134,7 @@ x = 1 + 2 + 3 + _
 >
 >   Worksheets(1).Name = "新的工作表"   '改第一個工作表名稱
 >
->   WorkSheets(1).Activate  '當前工作表
+>   WorkSheets(1).Activate  '第一個工作表拉到當前視窗
 >   
 >   Ex:
 >   Worksheets("活頁簿1").Activate
