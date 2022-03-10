@@ -30,8 +30,9 @@ Sub Bill()
                                     .PatternTintAndShade = 0
                                 End With
                             End If
+                        End If
                             
-                        ElseIf Not Find_cell_G Is Nothing Then
+                        If Not Find_cell_G Is Nothing Then
 
                             If Find_cell_G <> "" And Find_cell_G <> "µo²¼¸¹½X" Then
                                 Workbooks(2).Worksheets(ws.Name).Activate
