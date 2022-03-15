@@ -68,6 +68,14 @@ x = 1 + 2 + 3 + _
 >   ```
 >   Range("D65536").End(xlUp).Row    '找到D欄最後一列
 >   ```
+>   
+>   Ex：自動複製填滿某欄位直到最後一行
+>   ```
+>   Range("A1").Select
+>   Dim lrow As Long
+>   lrow = Cells(Cells.Rows.Count, "C").End(xlUp).Row
+>   Selection.AutoFill Destination:=Range("A1:A" & lrow)
+>   ```
 
 ---
 ## Columns 欄
