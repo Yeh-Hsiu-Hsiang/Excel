@@ -5,9 +5,16 @@ Sub 自動刪除製造數()
     For i = 6 To ActiveSheet.Range("R65536").End(xlUp).Row
         
         If Range("R" & i) = "" Then
-            Rows(i).Select
+        
+            Rows(i).Offset.Select
             Selection.Delete Shift:=xlUp
+            
+            If Range("R" & i).Offset(-1, 0) = "" Then
+                Rows(i).Offset(-1, 0).Select
+                Selection.Delete Shift:=xlUp
+            End If
         End If
     Next
     
 End Sub
+
