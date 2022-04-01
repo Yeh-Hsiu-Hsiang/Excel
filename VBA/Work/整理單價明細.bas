@@ -120,13 +120,14 @@ Sub 整理單價明細()
     ActiveSheet.Range("BA2", ActiveSheet.Range("BA" & ActiveSheet.Rows.Count).End(xlUp)).Select
     Selection.Copy
 
-    Worksheets("RD訂單單據轉出").Activate
-    ActiveSheet.Range("AP501").Select
+    Worksheets("OSP轉正航單據").Activate
+    ActiveSheet.Range("AR2").Select
     Selection.PasteSpecial xlPasteValues
     Application.CutCopyMode = False
 
     Range("AP1").Select
     Sheets("單價").Select
 End Sub
+
 
 
