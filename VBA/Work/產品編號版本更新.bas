@@ -10,27 +10,34 @@ Sub 產品編號版本更新()
         FieldInfo:=Array(Array(0, 1), Array(12, 1)), TrailingMinusNumbers:=True
     Application.DisplayAlerts = True
 
-    Range("G1") = "版本排序"
-    Range("G2").Select
-    ActiveCell.Formula = _
-        "=IF(IFERROR(IF(FIND(""-"",RC[-5], 1)>=1,"""",RC[-5]),RC[-5])=0,"""",IFERROR(IF(FIND(""-"",RC[-5], 1)>=1,"""",RC[-5]),RC[-5]))"
-
-
-    Range("H1") = "產品編號"
+    Range("H1") = "版本排序"
     Range("H2").Select
+    ActiveCell.Formula = _
+        "=IF(IFERROR(IF(FIND(""-"",B2, 1)>=1,"""",B2),B2)=0,"""",IFERROR(IF(FIND(""-"",B2, 1)>=1,"""",B2),B2))"
+
+
+    Range("I1") = "產品編號"
+    Range("I2").Select
     ActiveCell.Formula = "=A2 & B2"
+    
+    Range("J1") = "停用"
+    Range("J2").Select
+    ActiveCell.Formula = "=IF(G2=""  /  /  "","""",G2)"
 
     Dim lrow As Long
     lrow = Cells(Cells.Rows.Count, "A").End(xlUp).Row
 
-    Range("G2").Select
-    Selection.AutoFill Destination:=Range("G2:G" & lrow)
-
     Range("H2").Select
     Selection.AutoFill Destination:=Range("H2:H" & lrow)
 
-    For i = 1 To Range("G65536").End(xlUp).Row
-        If Range("G" & i) = "" Then
+    Range("I2").Select
+    Selection.AutoFill Destination:=Range("I2:I" & lrow)
+    
+    Range("J2").Select
+    Selection.AutoFill Destination:=Range("J2:J" & lrow)
+
+    For i = 1 To Range("H65536").End(xlUp).Row
+        If Range("H" & i) = "" Then
             Rows(i).Select
             Selection.Delete Shift:=xlUp
         End If
@@ -42,10 +49,10 @@ Sub 產品編號版本更新()
         "A2:A" & lrow), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
         xlSortNormal
     ActiveWorkbook.ActiveSheet.Sort.SortFields.Add2 Key:=Range( _
-        "G2:G" & lrow), SortOn:=xlSortOnValues, Order:=xlDescending, DataOption:= _
+        "H2:H" & lrow), SortOn:=xlSortOnValues, Order:=xlDescending, DataOption:= _
         xlSortNormal
     With ActiveWorkbook.ActiveSheet.Sort
-        .SetRange Range("A2:G" & lrow)
+        .SetRange Range("A2:H" & lrow)
         .Header = xlGuess
         .MatchCase = False
         .Orientation = xlTopToBottom
@@ -61,9 +68,15 @@ Sub 產品編號版本更新()
             Selection.Delete Shift:=xlUp
             j = j - 1
         End If
+        
+        If Range("J" & j) <> "" Then
+            Rows(j).Select
+            Selection.Delete Shift:=xlUp
+            j = j - 1
+        End If
     Next
 
-    Range("H:H").Copy
+    Range("I:I").Copy
 
     Worksheets.Add After:=ActiveWorkbook.Worksheets(ActiveWorkbook.Worksheets.Count)
 
@@ -73,7 +86,7 @@ Sub 產品編號版本更新()
     Range("D:E").Copy
 
     Worksheets(2).Activate
-    Range("B:B").PasteSpecial xlPasteValues
+    Range("B:C").PasteSpecial xlPasteValues
     
     [B:B].Select
     With Selection
