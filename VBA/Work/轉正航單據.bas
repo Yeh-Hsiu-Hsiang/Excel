@@ -57,13 +57,20 @@ MsgBox "  *** 現在要將訂單明細 - 轉成[ 正航 ] 訂單憑證單據 ***  "
     Selection.AutoFill Destination:=Range("AW2:AW" & lrow)
     
     Range("AX2").Select
-    ActiveCell.Formula = "=IF(OSP轉正航單據!AR2="""","""",LEFT(OSP轉正航單據!AR2,FIND(""#"",OSP轉正航單據!AR2,1)-1))"
+    ActiveCell.Formula = "=IF(OSP!C5="""","""",OSP!C5)"
     Selection.AutoFill Destination:=Range("AX2:AX" & lrow)
     
     Range("AY2").Select
-    ActiveCell.Formula = "=IF(OSP轉正航單據!AR2="""","""",MID(OSP轉正航單據!AR2,FIND(""#"",OSP轉正航單據!AR2,1)+1,5))"
+    ActiveCell.Formula = "=IF(OSP!C5="""","""",OSP!D5)"
     Selection.AutoFill Destination:=Range("AY2:AY" & lrow)
     
+    For j = 2 To Range("AX65536").End(xlUp).Row
+        If Range("AX" & j) = "" And Range("AY" & j) = "" And Range("AX" & j).Offset(1, 0) <> "" Then
+            Range("AX" & j & ":AY" & j).Select
+            Selection.Delete Shift:=xlUp
+            j = j - 1
+        End If
+    Next
     
     Range("AZ2").Select
     ActiveCell.Formula = "=SUBSTITUTE(IFERROR(INDEX(A:A,MATCH(AV2,AT:AT,0),1), IF(AV2="""","""", AV2&""#""&AW2)),""#0"",""#O"",1)"
@@ -109,8 +116,8 @@ MsgBox "  *** 現在要將訂單明細 - 轉成[ 正航 ] 訂單憑證單據 ***  "
         
       MsgBox "  ****即將列印單價差異明細表****  "
       
-    
-    印單價差異
+    整理單價明細
+    '印單價差異
    End If
    '---------
    MsgBox "  @@@ 即將實施 轉正航單據檔案  @@@  "
@@ -121,7 +128,7 @@ MsgBox "  *** 現在要將訂單明細 - 轉成[ 正航 ] 訂單憑證單據 ***  "
         If Range("A" & i) = Range("A" & i).Offset(-1, 0) And Range("P" & i) = "OSP" Then
 
             If Left(Range("AP" & i), 1) Like "[a-z, A-Z]" Then
-                
+
             Else
                 Rows(i).Select
                 Selection.Delete Shift:=xlUp
@@ -136,16 +143,16 @@ MsgBox "  *** 現在要將訂單明細 - 轉成[ 正航 ] 訂單憑證單據 ***  "
     Sheets("RD訂單單據轉出").Copy
     Sheets("RD訂單單據轉出").Select
     Sheets("RD訂單單據轉出").Name = YEE & "RD訂單單據轉出"
-    ChDir "\\YEAWEN\files-server\06_資材\01_生管\航電每日資訊\航電訂單銷貨轉正航\航電訂單_轉正航單據"
-    ActiveWorkbook.SaveAs Filename:= _
-        "\\YEAWEN\files-server\06_資材\01_生管\航電每日資訊\航電訂單銷貨轉正航\航電訂單_轉正航單據\" & YEE & "轉正航訂單單據.xlsx" _
-        , FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False
-    ActiveWindow.Close
-
-    Sheets("DATA").Select
-    Range("H1").Select
-
-    複製訂單到MARS表
+'    ChDir "\\YEAWEN\files-server\06_資材\01_生管\航電每日資訊\航電訂單銷貨轉正航\航電訂單_轉正航單據"
+'    ActiveWorkbook.SaveAs Filename:= _
+'        "\\YEAWEN\files-server\06_資材\01_生管\航電每日資訊\航電訂單銷貨轉正航\航電訂單_轉正航單據\" & YEE & "轉正航訂單單據.xlsx" _
+'        , FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False
+'    ActiveWindow.Close
+'
+'    Sheets("DATA").Select
+'    Range("H1").Select
+'
+'    複製訂單到MARS表
     
 End Sub
 
