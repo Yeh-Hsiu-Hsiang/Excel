@@ -1,5 +1,9 @@
 Sub 轉銷貨單據格式更改()
 
+    Dim wb As String
+
+    wb = ActiveWorkbook.Name
+
     Sheets("轉銷貨單據欄位").Select
     Range("AY1") = "#0改#O"
     Range("AY2").Select
@@ -37,4 +41,19 @@ Sub 轉銷貨單據格式更改()
     Columns("AY:AZ").Select
     Selection.Delete
     
+    Workbooks.Open Filename:="C:\Users\ywqa011\Desktop\TEST銷貨.xls"  '開啟檔案
+    
+    Range("A2", "AX" & Range("A65536").End(xlUp).Row + 1).Select
+    Selection.Delete
+    
+    Workbooks(wb).Worksheets("轉銷貨單據欄位").Activate
+    
+    Range("A2", "AX" & Range("A65536").End(xlUp).Row).Select
+    Selection.Copy
+    
+    Workbooks("TEST銷貨.xls").Worksheets(1).Activate
+    
+    Range("A2").PasteSpecial xlPasteValues
+    
 End Sub
+
