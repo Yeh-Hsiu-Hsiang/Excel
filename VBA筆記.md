@@ -35,6 +35,12 @@ MsgBox ("Hello, world!")
 ```
 
 ---
+## 輸出至即時運算視窗：Debug.Print
+```VBA
+Debug.Print "s = " & s
+```
+
+---
 ## 註解：```'```
 ```VBA
 'MsgBox ("Hello, world!")
@@ -266,4 +272,5 @@ x = 1 + 2 + 3 + _
 [EXCEL VBA從頭來過-基本語法(上篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%8A%E7%AF%87-c2bc76065ecd)  
 [EXCEL VBA從頭來過-基本語法(中篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%AD%E7%AF%87-4dda73e44eaf)  
 [EXCEL VBA從頭來過-基本語法(下篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%8B%E7%AF%87-cd3f6a389f34)  
-[VBA + Excel VBA Code Examples](https://www.automateexcel.com/vba-code-examples/)
+[VBA + Excel VBA Code Examples](https://www.automateexcel.com/vba-code-examples/)  
+[Excel VBA 除錯技巧：Debug.Print 與即時運算視窗使用教學](https://officeguide.cc/excel-vba-debug-immediate-window-tutorial/)
