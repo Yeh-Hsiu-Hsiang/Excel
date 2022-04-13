@@ -141,14 +141,23 @@ x = 1 + 2 + 3 + _
 >   ActiveSheet '正在使用的工作表
 >
 >   Worksheet   '工作表
->
 >   WorkSheets  '所有工作表
 >
 >   Worksheets.Add  '新增工作表
+>   Worksheets.add().name = "test"  '新增一個 test 的工作表
+>   Worksheets.add before:=Worksheets(2)    '在第二個工作表前新增工作表
+>   Worksheets.add after:=Worksheets(1)     '在第一個工作表之後新增工作表
+>   Worksheets.add count:=10    '新增十個工作表
+>   Worksheets.Count    '現有工作表數量
+>
+>   '在最後一個工作表後新增一個叫 MySheet的工作表
+>   Worksheets.add(after:=Worksheets(Worksheets.Count)).Name = "MySheet"    
+>
+>   Worksheets.add after:=Worksheets(Worksheets.Count), Count:=5    '在最後一個工作表後新增五個工作表
 >
 >   Worksheets(1).Name = "新的工作表"   '改第一個工作表名稱
 >
->   WorkSheets(1).Activate  '第一個工作表拉到當前視窗
+>   WorkSheets(1).Activate  '切換到第一個工作表
 >   
 >   Ex:
 >   Worksheets("活頁簿1").Activate
