@@ -239,6 +239,21 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   ```  
 >   其他請參考 [XlPasteType 列舉 (Excel)](https://docs.microsoft.com/zh-tw/office/vba/api/Excel.XlPasteType)
 
+
+---
+## 搜尋並取代
+>   **在 A 工作表內，搜尋 B 工作表 R3 儲存格的值，並取代成 B 工作表 S3 儲存格的值**
+>   ```VBA
+>   Sheets("A").Cells.Replace _
+>   Sheets("B").[R3], _
+>   Sheets("B").[S3], xlPart   
+>   ```
+
+>   |  名稱 |  描述 |  
+>   |  :-----: | :-----: |  
+>   |   xlPart  |  與部分搜尋文字相符  |
+>   |   xlWhole  |  與全部搜尋文字相符  |
+
 ---
 ## 排序
 >   ```VBA
