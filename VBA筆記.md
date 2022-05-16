@@ -47,10 +47,18 @@ Debug.Print "s = " & s
 ```
 
 ---
-## 換行：```_```
+## 程式換行：```_```
 ```VBA
 x = 1 + 2 + 3 + _
     4 + 5 + 6
+```
+
+
+---
+## 文字換行顯示：```vbCrLf、Chr(10)```
+```VBA
+MsgBox "NOTICE:" & vbCrLf & "This is an Important Message!"
+MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 ```
 
 ---
@@ -242,7 +250,8 @@ x = 1 + 2 + 3 + _
 >   DataOption = xlSortNormal  
 >   DataOption = xlSortTextAsNumbers    '將文字視為數字排序
 >   
->   Header = xlYes   '有標題行
+>   Header = xlYes   '有標題行（=1）
+>   Header = xlGuess    '工作表自己判斷（=0）
 >   MatchCase = False   '不區分大小寫
 >   
 >   Orientation = xlTopToBottom '按行排序
