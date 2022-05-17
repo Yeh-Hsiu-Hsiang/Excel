@@ -172,6 +172,16 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   ```
 
 ---
+## 印表機
+>   ```VBA
+>   '指定 工作表1 的印表機為 Intermec PD43 (203 dpi)
+>   Sheets(1).PrintOut ActivePrinter:="Intermec PD43 (203 dpi)"   
+>   ```
+
+
+
+
+---
 ## 給予值
 >   Ex:  
 >   A1、B1、A2、B2=100
