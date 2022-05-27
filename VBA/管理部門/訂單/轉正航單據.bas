@@ -39,6 +39,17 @@ MsgBox "  *** 現在要將訂單明細 - 轉成[ 正航 ] 訂單憑證單據 ***  "
     Dim lrow As Long
     lrow = Cells(Cells.Rows.Count, "A").End(xlUp).Row
     
+    '---------------------航電單價 Z ---------------------
+    
+    Range("Z2").Select
+    ActiveCell.Formula = "=IF(Y2="""","""",IF(ISERROR(MATCH(""*""&"" 合計"",W2,0)),OSP!G5,INDEX(OSP!I:I,MATCH(W2,OSP!A:A,0),1)))"
+    Selection.AutoFill Destination:=Range("Z2:Z" & lrow)
+    
+    '---------------------航電單價 Z ---------------------
+    
+    
+    
+    
     Range("AT2").Select
     ActiveCell.Formula = "=I2"
     Selection.AutoFill Destination:=Range("AT2:AT" & lrow)
@@ -116,8 +127,8 @@ MsgBox "  *** 現在要將訂單明細 - 轉成[ 正航 ] 訂單憑證單據 ***  "
         
       MsgBox "  ****即將列印單價差異明細表****  "
       
-    整理單價明細
-    '印單價差異
+     
+    印單價差異
    End If
    '---------
    MsgBox "  @@@ 即將實施 轉正航單據檔案  @@@  "
@@ -143,16 +154,16 @@ MsgBox "  *** 現在要將訂單明細 - 轉成[ 正航 ] 訂單憑證單據 ***  "
     Sheets("RD訂單單據轉出").Copy
     Sheets("RD訂單單據轉出").Select
     Sheets("RD訂單單據轉出").Name = YEE & "RD訂單單據轉出"
-'    ChDir "\\YEAWEN\files-server\06_資材\01_生管\航電每日資訊\航電訂單銷貨轉正航\航電訂單_轉正航單據"
-'    ActiveWorkbook.SaveAs Filename:= _
-'        "\\YEAWEN\files-server\06_資材\01_生管\航電每日資訊\航電訂單銷貨轉正航\航電訂單_轉正航單據\" & YEE & "轉正航訂單單據.xlsx" _
-'        , FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False
-'    ActiveWindow.Close
-'
-'    Sheets("DATA").Select
-'    Range("H1").Select
-'
-'    複製訂單到MARS表
+    ChDir "\\YEAWEN\files-server\06_資材\01_生管\航電每日資訊\航電訂單銷貨轉正航\航電訂單_轉正航單據"
+    ActiveWorkbook.SaveAs Filename:= _
+        "\\YEAWEN\files-server\06_資材\01_生管\航電每日資訊\航電訂單銷貨轉正航\航電訂單_轉正航單據\" & YEE & "轉正航訂單單據.xlsx" _
+        , FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False
+    ActiveWindow.Close
+
+    Sheets("DATA").Select
+    Range("H1").Select
+
+    複製訂單到MARS表
     
 End Sub
 
