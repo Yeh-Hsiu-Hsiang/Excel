@@ -163,6 +163,8 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >
 >   Worksheets.add after:=Worksheets(Worksheets.Count), Count:=5    '在最後一個工作表後新增五個工作表
 >
+>   Sheets("Sheet1").Delete     '刪除工作表
+>
 >   Worksheets(1).Name = "新的工作表"   '改第一個工作表名稱
 >
 >   WorkSheets(1).Activate  '切換到第一個工作表
@@ -172,13 +174,19 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   ```
 
 ---
+## 提示視窗
+
+>   ```
+>   Application.DisplayAlerts = False   '關閉提示視窗
+>   Application.DisplayAlerts = True    '開啟提示視窗
+>   ```
+
+---
 ## 印表機
 >   ```VBA
 >   '指定 工作表1 的印表機為 Intermec PD43 (203 dpi)
 >   Sheets(1).PrintOut ActivePrinter:="Intermec PD43 (203 dpi)"   
 >   ```
-
-
 
 
 ---
