@@ -40,6 +40,8 @@ MsgBox ("Hello, world!")
 Debug.Print "s = " & s
 ```
 
+[Excel VBA 除錯技巧：Debug.Print 與即時運算視窗使用教學](https://officeguide.cc/excel-vba-debug-immediate-window-tutorial/)
+
 ---
 ## 註解：```'```
 ```VBA
@@ -115,6 +117,32 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   Range("A1","B2") 表示一區 (A1、B1、A2、B2) = Range(Cells("A1"),Cells("B2"))
 
 ---
+## 找到並選定最後一列的儲存格
+>   ```VBA
+>   i = 3
+>   Do While True
+>       If ActiveSheet.Cells(i, 1).Value = "" Then
+>           ActiveSheet.Cells(i, 1).Select
+>           Exit Do
+>       End If
+>       i = i + 1
+>   Loop
+>   ```
+
+---
+## 找到並選定最後一欄的儲存格
+>   ```VBA
+>   i = 3
+>   Do While True
+>       If ActiveSheet.Cells(1, i).Value = "" Then
+>           ActiveSheet.Cells(1, i).Select
+>           Exit Do
+>       End If
+>       i = i + 1
+>   Loop
+>   ```
+
+---
 ## 活頁簿
 >   ```VBA
 >   Workbooks.Open "C:VBAdemo.xlsx" '開啟舊活頁簿
@@ -172,6 +200,21 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   Ex:
 >   Worksheets("活頁簿1").Activate
 >   ```
+
+---
+## 找尋特定工作表
+>   ```VBA
+>   Dim ws As Worksheet
+>       
+>   For Each ws In Worksheets   '讀取每個工作表
+>       If ws.Name Like "*年" Then
+>           ws.Activate
+>           Exit For
+>       End If
+>   Next ws
+>   ```
+
+
 
 ---
 ## 提示視窗
@@ -273,6 +316,18 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   |   xlWhole  |  與全部搜尋文字相符  |
 
 ---
+## 自動填滿
+>   ```AutoFill (Destination, 類型)```
+>   ```VBA
+>   Dim lrow As Long
+>   lrow = Cells(Cells.Rows.Count, "A").End(xlUp).Row
+>   
+>   Selection.AutoFill Destination:=Range("L2:L" & lrow)
+>   ```
+
+[XlAutoFillType 列舉 (Excel)](https://docs.microsoft.com/zh-tw/office/vba/api/excel.xlautofilltype)
+
+---
 ## 自動篩選
 >   ```AutoFilter (Field, Criteria1, Operator, Criteria2, SubField, VisibleDropDown) ```
 >   ```VBA
@@ -309,7 +364,6 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   |  xlTop10Items |  3  |  顯示最高值的專案 (在 Criteria1 中指定的專案數目)  |  
 >   |  xlTop10Percent |  5  |  顯示最高值的專案 (以 Criteria1 指定的百分比)  |  
 >   
-
 
 ---
 ## 排序
@@ -363,4 +417,3 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 [EXCEL VBA從頭來過-基本語法(中篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%AD%E7%AF%87-4dda73e44eaf)  
 [EXCEL VBA從頭來過-基本語法(下篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%8B%E7%AF%87-cd3f6a389f34)  
 [VBA + Excel VBA Code Examples](https://www.automateexcel.com/vba-code-examples/)  
-[Excel VBA 除錯技巧：Debug.Print 與即時運算視窗使用教學](https://officeguide.cc/excel-vba-debug-immediate-window-tutorial/)
