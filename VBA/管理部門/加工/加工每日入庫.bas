@@ -66,6 +66,4 @@ Sub 加工每日入庫()
     ActiveSheet.Select
     Selection.PasteSpecial xlPasteValues
     
-    Columns("C:C").NumberFormatLocal = "m月d日"
-
 End Sub
