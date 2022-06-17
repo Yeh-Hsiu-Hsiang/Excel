@@ -273,6 +273,45 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   |   xlWhole  |  與全部搜尋文字相符  |
 
 ---
+## 自動篩選
+>   ```AutoFilter (Field, Criteria1, Operator, Criteria2, SubField, VisibleDropDown) ```
+>   ```VBA
+>   ActiveSheet.Range("$A$1:$K$40").AutoFilter Field:=7, Criteria1:="1"
+>   ```
+>   
+>   |  名稱  |  描述  |  
+>   |  :-----:  | :-----:  |  
+>   |   Field  |  要篩選的欄位  |
+>   |   Criteria1  |  條件  |
+>   |   Operator  |  指定篩選類型的 XlAutoFilterOperator 常數。  |
+>   |   Criteria2  |  第二條件  |
+>   |   SubField  |  第二條件  |
+>   |   VisibleDropDown  |  是否顯示[自動篩選]下拉式箭號。|
+
+* Criteria1：  
+>   "="：找空白欄位。  
+>   "<>"：找非空白欄位。  
+>   "><"：找無資料欄位。  
+
+* XlAutoFilterOperator：會指定用來關聯由篩選條件套用之兩個準則的運算子。
+
+>   |  名稱 |  值  |  描述  |  
+>   |  :-----:  |  :-----:  |  :-----:  |  
+>   |  xlAnd |  1  |  Criteria1 與 Criteria2 的邏輯 AND  |  
+>   |  xlBottom10Items |  4  |  在 Criteria1 中指定的專案數目，顯示最低值的專案  |  
+>   |  xlBottom10Percent |  6  |  以 Criteria1) 指定的百分比顯示最低值的專案  |  
+>   |  xlFilterCellColor |  8  |  儲存格的色彩  |  
+>   |  xlFilterDynamic |  11  |  動態篩選條件  |  
+>   |  xlFilterFontColor |  9  |  字型的色彩  |  
+>   |  xlFilterIcon |  10  |  篩選條件圖示  |  
+>   |  xlFilterValues |  7  |  篩選條件值  |  
+>   |  xlOr |  第  |  Criteria1 或 Criteria2 的邏輯 OR  |  
+>   |  xlTop10Items |  3  |  顯示最高值的專案 (在 Criteria1 中指定的專案數目)  |  
+>   |  xlTop10Percent |  5  |  顯示最高值的專案 (以 Criteria1 指定的百分比)  |  
+>   
+
+
+---
 ## 排序
 >   ```VBA
 >   SortOn = xlSortOnValues   '要依什麼排序，預設為儲存格值
