@@ -40,6 +40,14 @@ MsgBox ("Hello, world!")
 Debug.Print "s = " & s
 ```
 
+---
+## 清除即時運算視窗內容：SendKeys "^g^a{DEL}"
+```VBA
+Sub Del_list()
+       SendKeys "^g^a{DEL}"
+End Sub
+```
+
 [Excel VBA 除錯技巧：Debug.Print 與即時運算視窗使用教學](https://officeguide.cc/excel-vba-debug-immediate-window-tutorial/)
 
 ---
@@ -417,3 +425,6 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 [EXCEL VBA從頭來過-基本語法(中篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%AD%E7%AF%87-4dda73e44eaf)  
 [EXCEL VBA從頭來過-基本語法(下篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%8B%E7%AF%87-cd3f6a389f34)  
 [VBA + Excel VBA Code Examples](https://www.automateexcel.com/vba-code-examples/)  
+[VBA code to loop through files in a folder (and sub folders)](https://exceloffthegrid.com/vba-code-loop-files-folder-sub-folders/)  
+[Excel VBA 列出目錄中所有檔案、子目錄教學與範例](https://officeguide.cc/excel-vba-list-files-folders-in-directory-tutorial-examples/)  
+
