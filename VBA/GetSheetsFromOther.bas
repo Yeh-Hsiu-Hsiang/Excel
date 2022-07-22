@@ -3,7 +3,6 @@ Attribute VB_Name = "GetSheetsFromOther"
 Sub GetSheetsFromOther()
 
     Dim Path, ActWb As String, i As Integer
-    Dim ws As Worksheet
     
     ActWb = ActiveWorkbook.Name         '紀錄現有活頁簿名稱
     
@@ -17,11 +16,18 @@ Sub GetSheetsFromOther()
         
         Do While fileName <> ""
             Workbooks.Open fileName:=Path & fileName, ReadOnly:=True        '開啟唯讀檔案
+            OpenWb = ActiveWorkbook.Name
             
-            For x = 1 To ActiveWorkbook.Sheets.Count
-                ActiveWorkbook.Sheets(x).Copy _
-                After:=Workbooks(ActWb).Sheets(ActiveWorkbook.Sheets.Count)
-                ActiveSheet.Name = Range("K4") & "#" & Range("O5")  '工作表名稱
+            For x = 1 To Workbooks(OpenWb).Sheets.Count
+                If Workbooks(OpenWb).Sheets.Count > 1 Then
+                    ActiveWorkbook.Sheets(x).Copy _
+                    After:=Workbooks(ActWb).Sheets(1)
+                    ActiveSheet.Name = Range("K4") & "#" & Range("O5") & "-" & x  '工作表名稱
+                Else
+                    ActiveWorkbook.Sheets(x).Copy _
+                    After:=Workbooks(ActWb).Sheets(1)
+                    ActiveSheet.Name = Range("K4") & "#" & Range("O5")  '工作表名稱
+                End If
             Next
 
             Workbooks(fileName).Close       '關閉唯讀檔案
