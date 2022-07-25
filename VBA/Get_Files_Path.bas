@@ -33,7 +33,7 @@ While Len(fileName) <> 0
             'Insert the actions to be performed on each file
             'This example will print the full file path to the immediate window
             
-            j = 1
+            j = 2
             Do While True
                 If ActiveSheet.Cells(j, "A").Value = "" Then
                     ActiveSheet.Cells(j, "A").Select
@@ -78,6 +78,6 @@ Sub Del_list()
 
     SendKeys "^g^a{DEL}"
     
-    Columns("A:A").Select
+    Range("A2", Range("A65535").End(xlUp)).Select
     Selection.ClearContents
 End Sub
