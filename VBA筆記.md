@@ -125,6 +125,12 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 >   Range("A1","B2") 表示一區 (A1、B1、A2、B2) = Range(Cells("A1"),Cells("B2"))
 
 ---
+## 取消選取
+>   ```VBA
+>   Application.CutCopyMode = False
+>   ```
+
+---
 ## 找到並選定最後一列的儲存格
 >   ```VBA
 >   i = 3
