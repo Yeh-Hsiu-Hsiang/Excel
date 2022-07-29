@@ -2,7 +2,11 @@ Attribute VB_Name = "Get_Files_Path"
 Sub loopAllSubFolderSelectStartDirectory()
 
 'Another Macro must call LoopAllSubFolders Macro to start to procedure
-Call LoopAllSubFolders("\\yeawen\files-server\08_文控\文管中心\4 SIP\航電\010")
+Input_Data = InputBox("請輸入料號開頭：")
+
+Call LoopAllSubFolders("\\yeawen\files-server\08_文控\文管中心\4 SIP\航電\" & Input_Data)
+
+MsgBox "OK"
 
 End Sub
 
@@ -71,6 +75,8 @@ For k = 2 To Range("A65536").End(xlUp).Row
         k = k - 1
     End If
 Next
+
+
 
 End Sub
 
