@@ -6,9 +6,9 @@ Sub GetSheetsFromOther()
     
     ActWb = ActiveWorkbook.Name         '紀錄現有活頁簿名稱
     
-    For i = 2 To Workbooks(ActWb).Worksheets("test").Range("A65536").End(xlUp).Row      '逐筆讀取路徑
+    For i = 2 To Workbooks(ActWb).Worksheets("目錄").Range("A65536").End(xlUp).Row      '逐筆讀取路徑
         
-        Workbooks(ActWb).Worksheets("test").Activate    '指定目前工作表
+        Workbooks(ActWb).Worksheets("目錄").Activate    '指定目前工作表
     
         Path = Range("A" & i)           '路徑
         
@@ -22,6 +22,7 @@ Sub GetSheetsFromOther()
                 If Workbooks(OpenWb).Sheets.Count > 1 Then
                     ActiveWorkbook.Sheets(x).Copy _
                     After:=Workbooks(ActWb).Sheets(1)
+                    MsgBox x
                     ActiveSheet.Name = Range("K4") & "#" & Range("O5") & "-" & x  '工作表名稱
                 Else
                     ActiveWorkbook.Sheets(x).Copy _
@@ -35,11 +36,17 @@ Sub GetSheetsFromOther()
           Loop
     Next i
     
-    Sheets("test").Select
+    Sheets("目錄").Select
     
     Columns_B
     
     Columns_C_D
+    
+    New_Sheets
+    
+    GetNewSheets
+    
+    Del_list
     
 End Sub
 
@@ -89,28 +96,70 @@ End Sub
 
 Sub New_Sheets()
 
+    Dim ws As Worksheet
+
     For C_Loop = 2 To Range("C65536").End(xlUp).Row
     
         If Range("C" & C_Loop) = Range("C" & C_Loop).Offset(-1, 0) And Range("C" & C_Loop) <> "" Then
             If Range("D" & C_Loop) < Range("D" & C_Loop).Offset(-1, 0) And Range("D" & C_Loop) <> "" Then
-                'Rows(C_Loop).Select
-                'Selection.Delete Shift:=xlUp
+
+                For Each ws In Worksheets
                 
-                Range("C" & C_Loop, "D" & C_Loop).Select
-                Selection.Clear
-                
-                C_Loop = C_Loop - 1
-            
+                    If LCase(ws.Name) = LCase(Range("B" & C_Loop)) Then   '判斷是否已存在工作表
+                    
+                        Application.DisplayAlerts = False
+                        Sheets(LCase(Range("B" & C_Loop))).Delete
+                        Application.DisplayAlerts = True
+                        
+                        Range("C" & C_Loop, "D" & C_Loop).Select
+                        Selection.Clear
+                        
+                        C_Loop = C_Loop - 1
+                    End If
+                Next
             End If
-  
         End If
     Next
 
 
 End Sub
+Sub GetNewSheets()
 
+    Dim ws As Worksheet
+    
+    Cells(1, "F") = "目錄"
+    i = 1
+    
+    For Each ws In Worksheets
+        If ws.Name <> "目錄" Then
+            i = i + 1
+            
+            ActiveSheet.Hyperlinks.Add anchor:=Cells(i, "F"), _
+                                       Address:="", _
+                                       SubAddress:="'" & ws.Name & "'!A1", _
+                                       TextToDisplay:=Worksheets(ws.Name).Range("K4") & "產品檢驗規範(加工檢驗)-(" & Worksheets(ws.Name).Range("M2") & ")"
 
-Sub Del_list()
-       SendKeys "^g^a{DEL}"
+'            ws.Hyperlinks.Add anchor:=ws.Cells(1, "P"), _
+'                              Address:="", _
+'                              SubAddress:="目錄!A1", _
+'                              TextToDisplay:="返回目錄"
+'                              ws.Cells(1, "P").Font.Size = 16
+'                              ws.Cells(1, "P").EntireColumn.AutoFit
+        End If
+    Next
+    
+    With Worksheets("目錄").Range("F:F")
+        .Font.Size = 20
+    End With
+
+    Columns("F:F").EntireColumn.AutoFit
+
 End Sub
 
+Sub Del_list()
+
+    SendKeys "^g^a{DEL}"
+    
+    Range("A2", Range("A65535").End(xlUp)).Select
+    Selection.ClearContents
+End Sub
