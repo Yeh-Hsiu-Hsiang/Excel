@@ -20,21 +20,28 @@ Sub GetSheetsFromOther()
             
             For x = 1 To Workbooks(OpenWb).Sheets.Count
                 If Workbooks(OpenWb).Sheets.Count > 1 Then
-                    ActiveWorkbook.Sheets(x).Copy _
-                    After:=Workbooks(ActWb).Sheets(1)
-                    MsgBox x
-                    ActiveSheet.Name = Range("K4") & "#" & Range("O5") & "-" & x  '工作表名稱
+                    If Range("Q2") = "" Then
+                        ActiveWorkbook.Sheets(x).Copy _
+                        After:=Workbooks(ActWb).Sheets(1)
+                        MsgBox x
+                        ActiveSheet.Name = Range("K4") & "#" & Range("O5") & "-" & x  '工作表名稱
+                    Else
+                        GoTo ContinueForLoop
+                    End If
+                                
                 Else
                     ActiveWorkbook.Sheets(x).Copy _
                     After:=Workbooks(ActWb).Sheets(1)
                     ActiveSheet.Name = Range("K4") & "#" & Range("O5")  '工作表名稱
                 End If
-            Next
+ContinueForLoop:
+            Next x
 
             Workbooks(fileName).Close       '關閉唯讀檔案
             fileName = Dir()
           Loop
     Next i
+    
     
     Sheets("目錄").Select
     
@@ -163,3 +170,5 @@ Sub Del_list()
     Range("A2", Range("A65535").End(xlUp)).Select
     Selection.ClearContents
 End Sub
+
+
