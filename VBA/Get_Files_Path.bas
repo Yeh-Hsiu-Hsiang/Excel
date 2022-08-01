@@ -8,6 +8,8 @@ Call LoopAllSubFolders("\\yeawen\files-server\08_文控\文管中心\4 SIP\航電\" & In
 
 MsgBox "OK"
 
+Range("F2").Select
+
 End Sub
 
 'List all files in sub folders
@@ -87,3 +89,4 @@ Sub Del_list()
     Range("A2", Range("A65535").End(xlUp)).Select
     Selection.ClearContents
 End Sub
+
