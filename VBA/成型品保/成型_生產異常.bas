@@ -1,61 +1,69 @@
-Attribute VB_Name = "¦¨«¬_¥Í²£²§±`"
-Sub ¦¨«¬_¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı()
+Sub æˆå‹_ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„()
 
-    Workbooks.Open fileName:="\\yeawen\files-server\10_¤½¥Î\00_i-Reporter ¦æ°Êªí³æ¨t²Î\03_³]­pÀÉ®×¸ê®Æ\«~«O½Ò\¦¨«¬«~«O\­º¥óÀËÅç¬ö¿ıªí(®g¥X¦¨«¬)_iPad.xlsx"  '¶}±ÒÀÉ®×
-    Workbooks.Open fileName:="\\yeawen\files-server\10_¤½¥Î\00_i-Reporter ¦æ°Êªí³æ¨t²Î\03_³]­pÀÉ®×¸ê®Æ\«~«O½Ò\¦¨«¬«~«O\¦¨«¬®g¥X_QCÀËÅç¬ö¿ıªí_iPad.xlsx"  '¶}±ÒÀÉ®×
+    Workbooks.Open fileName:="\\yeawen\files-server\10_å…¬ç”¨\00_i-Reporter è¡Œå‹•è¡¨å–®ç³»çµ±\03_è¨­è¨ˆæª”æ¡ˆè³‡æ–™\å“ä¿èª²\æˆå‹å“ä¿\é¦–ä»¶æª¢é©—ç´€éŒ„è¡¨(å°„å‡ºæˆå‹)_iPad.xlsx"  'é–‹å•Ÿæª”æ¡ˆ
+    Workbooks.Open fileName:="\\yeawen\files-server\10_å…¬ç”¨\00_i-Reporter è¡Œå‹•è¡¨å–®ç³»çµ±\03_è¨­è¨ˆæª”æ¡ˆè³‡æ–™\å“ä¿èª²\æˆå‹å“ä¿\æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_iPad.xlsx"  'é–‹å•Ÿæª”æ¡ˆ
+    Workbooks.Open fileName:="\\yeawen\files-server\10_å…¬ç”¨\00_i-Reporter è¡Œå‹•è¡¨å–®ç³»çµ±\03_è¨­è¨ˆæª”æ¡ˆè³‡æ–™\å“ä¿èª²\æˆå‹å“ä¿\æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_QRCode_iPad.xlsx"  'é–‹å•Ÿæª”æ¡ˆ
     
     Dim ws As Worksheet
 
-    '¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı
+    'ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„
     For Each ws In Worksheets
-        If LCase(ws.Name) = LCase("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı") Then   '§PÂ_¬O§_¤w¦s¦b¤u§@ªí¡A¤w¦s¦bª½±µ½Æ»s¶K¤W
+        If LCase(ws.Name) = LCase("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„") Then   'åˆ¤æ–·æ˜¯å¦å·²å­˜åœ¨å·¥ä½œè¡¨ï¼Œå·²å­˜åœ¨ç›´æ¥è¤‡è£½è²¼ä¸Š
         
-            Workbooks("­º¥óÀËÅç¬ö¿ıªí(®g¥X¦¨«¬)_iPad.xlsx").Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Activate   '«ü©w­º¥ó
-            Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Range("A1", ActiveSheet.Range("AJ" & Range("A65536").End(xlUp).Row)).ClearContents '²MªÅÂÂ¦³¸ê®Æ
+            Workbooks("é¦–ä»¶æª¢é©—ç´€éŒ„è¡¨(å°„å‡ºæˆå‹)_iPad.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'æŒ‡å®šé¦–ä»¶
+            Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Range("A1", ActiveSheet.Range("AJ" & Range("A65536").End(xlUp).Row)).ClearContents 'æ¸…ç©ºèˆŠæœ‰è³‡æ–™
             
-            Workbooks("¦¨«¬®g¥X_QCÀËÅç¬ö¿ıªí_iPad.xlsx").Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Activate   '«ü©wQCÀËÅç¬ö¿ıªí
-            Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Range("A1", ActiveSheet.Range("AJ" & Range("A65536").End(xlUp).Row)).ClearContents '²MªÅÂÂ¦³¸ê®Æ
+            Workbooks("æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_iPad.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'æŒ‡å®šQCæª¢é©—ç´€éŒ„è¡¨
+            Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Range("A1", ActiveSheet.Range("AJ" & Range("A65536").End(xlUp).Row)).ClearContents 'æ¸…ç©ºèˆŠæœ‰è³‡æ–™
             
-            Workbooks("«~«OIPQC_FQC¤é³ø¨t²Î(¦¨«¬).xlsm").Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Activate   '«ü©w·í«e¬¡­¶Ã¯¡B¤u§@ªí
-            ActiveSheet.Range("A1", ActiveSheet.Range("AJ" & Range("D65536").End(xlUp).Row)).Select   '¿ï¨ú­n½Æ»sªº½d³ò
-            Selection.Copy  '½Æ»s
-            
-            Workbooks("­º¥óÀËÅç¬ö¿ıªí(®g¥X¦¨«¬)_iPad.xlsx").Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Activate   '¿ï¾Ü­n¶K¤Wªº¬¡­¶Ã¯¡B¤u§@ªí
-            ActiveSheet.Range("A1", ActiveSheet.Range("AJ" & Range("D65536").End(xlUp).Row)).Select   '¿ï¨ú­n¶K¤Wªº½d³ò
-            Selection.PasteSpecial  '¶K¤W
-            
-            Workbooks("¦¨«¬®g¥X_QCÀËÅç¬ö¿ıªí_iPad.xlsx").Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Activate   '¿ï¾Ü­n¶K¤Wªº¬¡­¶Ã¯¡B¤u§@ªí
-            ActiveSheet.Range("A1", ActiveSheet.Range("AJ" & Range("D65536").End(xlUp).Row)).Select   '¿ï¨ú­n¶K¤Wªº½d³ò
-            Selection.PasteSpecial  '¶K¤W
+            Workbooks("æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_QRCode_iPad.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'æŒ‡å®šQCæª¢é©—ç´€éŒ„è¡¨
+            Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Range("A1", ActiveSheet.Range("AJ" & Range("A65536").End(xlUp).Row)).ClearContents 'æ¸…ç©ºèˆŠæœ‰è³‡æ–™
             
             
-            '-------------------------¦¨«¬®g¥X_QCÀËÅç¬ö¿ıªí-------------------------
+            Workbooks("å“ä¿IPQC_FQCæ—¥å ±ç³»çµ±(æˆå‹).xlsm").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'æŒ‡å®šç•¶å‰æ´»é ç°¿ã€å·¥ä½œè¡¨
+            ActiveSheet.Range("A1", ActiveSheet.Range("AJ" & Range("D65536").End(xlUp).Row)).Select   'é¸å–è¦è¤‡è£½çš„ç¯„åœ
+            Selection.Copy  'è¤‡è£½
             
-            ' ±Æ§Ç D Äæ¦Ü L Äæªº¸ê®Æ
-            ' Key1:=Range("E1")     ¨Ì¾Ú E Äæ±Æ§Ç
-            ' Order1:=xlDescending  ­°¾­±Æ§Ç
-            ' Header:=xlYes         ¦³¼ĞÃD¦C
-            Columns("A:AJ").Sort Key1:=Range("E1"), Order1:=xlDescending, Header:=xlYes  '¨Ì·Ó¤é´Á±Æ§Ç
+            Workbooks("é¦–ä»¶æª¢é©—ç´€éŒ„è¡¨(å°„å‡ºæˆå‹)_iPad.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'é¸æ“‡è¦è²¼ä¸Šçš„æ´»é ç°¿ã€å·¥ä½œè¡¨
+            ActiveSheet.Range("A1", ActiveSheet.Range("AJ" & Range("D65536").End(xlUp).Row)).Select   'é¸å–è¦è²¼ä¸Šçš„ç¯„åœ
+            Selection.PasteSpecial  'è²¼ä¸Š
+            
+            Workbooks("æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_QRCode_iPad.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'é¸æ“‡è¦è²¼ä¸Šçš„æ´»é ç°¿ã€å·¥ä½œè¡¨
+            ActiveSheet.Range("A1", ActiveSheet.Range("AJ" & Range("D65536").End(xlUp).Row)).Select   'é¸å–è¦è²¼ä¸Šçš„ç¯„åœ
+            Selection.PasteSpecial  'è²¼ä¸Š
+            
+            Workbooks("æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_iPad.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'é¸æ“‡è¦è²¼ä¸Šçš„æ´»é ç°¿ã€å·¥ä½œè¡¨
+            ActiveSheet.Range("A1", ActiveSheet.Range("AJ" & Range("D65536").End(xlUp).Row)).Select   'é¸å–è¦è²¼ä¸Šçš„ç¯„åœ
+            Selection.PasteSpecial  'è²¼ä¸Š
             
             
-            '---------³B²zABÄæ
+            '-------------------------æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨-------------------------
+            
+            ' æ’åº D æ¬„è‡³ L æ¬„çš„è³‡æ–™
+            ' Key1:=Range("E1")     ä¾æ“š E æ¬„æ’åº
+            ' Order1:=xlDescending  é™å†ªæ’åº
+            ' Header:=xlYes         æœ‰æ¨™é¡Œåˆ—
+            Columns("A:AJ").Sort Key1:=Range("E1"), Order1:=xlDescending, Header:=xlYes  'ä¾ç…§æ—¥æœŸæ’åº
+            
+            
+            '---------è™•ç†ABæ¬„
             Range("A2").Select
-            Selection.Formula = "=IF($D2="""","""", D2&COUNTIF($D$1:$D2,$D2))"  '³]©w A2Àx¦s®æ¤½¦¡
-            Range("A2").Select  '¿ï¨úA2
-            Selection.Copy  '½Æ»s A2¤½¦¡
+            Selection.Formula = "=IF($D2="""","""", D2&COUNTIF($D$1:$D2,$D2))"  'è¨­å®š A2å„²å­˜æ ¼å…¬å¼
+            Range("A2").Select  'é¸å–A2
+            Selection.Copy  'è¤‡è£½ A2å…¬å¼
             
             Dim x As Integer
-            x = Range("D65536").End(xlUp).Row   '®Ú¾ÚDÄæ³Ì«á¤@µ§¸ê®Æ¨Ó§ä¸ê®Æ¦@´X¦C
+            x = Range("D65536").End(xlUp).Row   'æ ¹æ“šDæ¬„æœ€å¾Œä¸€ç­†è³‡æ–™ä¾†æ‰¾è³‡æ–™å…±å¹¾åˆ—
             
             Range("A2", "A" & x).Select
-            Selection.PasteSpecial  '¶K¤W¤½¦¡
+            Selection.PasteSpecial  'è²¼ä¸Šå…¬å¼
             
             Range("A2", "A" & x).Select
             Selection.Copy
-            Selection.PasteSpecial xlPasteValues '¥u¶K¤W­È
+            Selection.PasteSpecial xlPasteValues 'åªè²¼ä¸Šå€¼
             
             Range("B2").Select
-            Selection.Formula = "=CONCATENATE(TEXT($E2,""YYYYMMDD""),""¡A"",$H2)"   '³]©w B2Àx¦s®æ­È
+            Selection.Formula = "=CONCATENATE(TEXT($E2,""YYYYMMDD""),""ï¼Œ"",$H2)"   'è¨­å®š B2å„²å­˜æ ¼å€¼
             Range("B2").Select
             Selection.Copy
             
@@ -64,39 +72,41 @@ Sub ¦¨«¬_¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı()
             
             Range("B2", "B" & x).Select
             Selection.Copy
-            Selection.PasteSpecial xlPasteValues '¥u¶K¤W­È
-            '---------³B²zABÄæ
+            Selection.PasteSpecial xlPasteValues 'åªè²¼ä¸Šå€¼
+            '---------è™•ç†ABæ¬„
             
             Range("A1").Select
             
-            '-------------------------¦¨«¬®g¥X_QCÀËÅç¬ö¿ıªí-------------------------
+            '-------------------------æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨-------------------------
             
             
-            '-------------------------­º¥óÀËÅç¬ö¿ıªí-------------------------
-            
-            Workbooks("­º¥óÀËÅç¬ö¿ıªí(®g¥X¦¨«¬)_iPad.xlsx").Worksheets("¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı").Activate   '¿ï¾Ü­n¶K¤Wªº¬¡­¶Ã¯¡B¤u§@ªí
-            
-            Columns("A:AJ").Sort Key1:=Range("E1"), Order1:=xlDescending, Header:=xlYes  '¨Ì·Ó¤é´Á±Æ§Ç
             
             
-            '---------³B²zABÄæ
+            '-------------------------é¦–ä»¶æª¢é©—ç´€éŒ„è¡¨-------------------------
+            
+            Workbooks("é¦–ä»¶æª¢é©—ç´€éŒ„è¡¨(å°„å‡ºæˆå‹)_iPad.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'é¸æ“‡è¦è²¼ä¸Šçš„æ´»é ç°¿ã€å·¥ä½œè¡¨
+            
+            Columns("A:AJ").Sort Key1:=Range("E1"), Order1:=xlDescending, Header:=xlYes  'ä¾ç…§æ—¥æœŸæ’åº
+            
+            
+            '---------è™•ç†ABæ¬„
             Range("A2").Select
-            Selection.Formula = "=IF($D2="""","""", D2&COUNTIF($D$1:$D2,$D2))"  '³]©w A2Àx¦s®æ¤½¦¡
-            Range("A2").Select  '¿ï¨úA2
-            Selection.Copy  '½Æ»s A2¤½¦¡
+            Selection.Formula = "=IF($D2="""","""", D2&COUNTIF($D$1:$D2,$D2))"  'è¨­å®š A2å„²å­˜æ ¼å…¬å¼
+            Range("A2").Select  'é¸å–A2
+            Selection.Copy  'è¤‡è£½ A2å…¬å¼
             
             Dim y As Integer
-            y = Range("D65536").End(xlUp).Row   '®Ú¾ÚDÄæ³Ì«á¤@µ§¸ê®Æ¨Ó§ä¸ê®Æ¦@´X¦C
+            y = Range("D65536").End(xlUp).Row   'æ ¹æ“šDæ¬„æœ€å¾Œä¸€ç­†è³‡æ–™ä¾†æ‰¾è³‡æ–™å…±å¹¾åˆ—
             
             Range("A2", "A" & y).Select
-            Selection.PasteSpecial  '¶K¤W¤½¦¡
+            Selection.PasteSpecial  'è²¼ä¸Šå…¬å¼
             
             Range("A2", "A" & y).Select
             Selection.Copy
-            Selection.PasteSpecial xlPasteValues '¥u¶K¤W­È
+            Selection.PasteSpecial xlPasteValues 'åªè²¼ä¸Šå€¼
             
             Range("B2").Select
-            Selection.Formula = "=CONCATENATE(TEXT($E2,""YYYYMMDD""),""¡A"",$H2)"   '³]©w B2Àx¦s®æ­È
+            Selection.Formula = "=CONCATENATE(TEXT($E2,""YYYYMMDD""),""ï¼Œ"",$H2)"   'è¨­å®š B2å„²å­˜æ ¼å€¼
             Range("B2").Select
             Selection.Copy
             
@@ -105,15 +115,59 @@ Sub ¦¨«¬_¥Í²£²§±`ª¬ªp¤ÀªR°lÂÜ¬ö¿ı()
             
             Range("B2", "B" & y).Select
             Selection.Copy
-            Selection.PasteSpecial xlPasteValues '¥u¶K¤W­È
-            '---------³B²zABÄæ
+            Selection.PasteSpecial xlPasteValues 'åªè²¼ä¸Šå€¼
+            '---------è™•ç†ABæ¬„
             
             Range("A1").Select
-            '-------------------------­º¥óÀËÅç¬ö¿ıªí-------------------------
+            '-------------------------é¦–ä»¶æª¢é©—ç´€éŒ„è¡¨-------------------------
+            
+            
+            
+            '-------------------------æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_QRCode_iPad-------------------------
+            
+            Workbooks("æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_QRCode_iPad.xlsx").Worksheets("ç”Ÿç”¢ç•°å¸¸ç‹€æ³åˆ†æè¿½è¹¤ç´€éŒ„").Activate   'é¸æ“‡è¦è²¼ä¸Šçš„æ´»é ç°¿ã€å·¥ä½œè¡¨
+            
+            Columns("A:AJ").Sort Key1:=Range("E1"), Order1:=xlDescending, Header:=xlYes  'ä¾ç…§æ—¥æœŸæ’åº
+            
+            
+            '---------è™•ç†ABæ¬„
+            Range("A2").Select
+            Selection.Formula = "=IF($D2="""","""", D2&COUNTIF($D$1:$D2,$D2))"  'è¨­å®š A2å„²å­˜æ ¼å…¬å¼
+            Range("A2").Select  'é¸å–A2
+            Selection.Copy  'è¤‡è£½ A2å…¬å¼
+            
+            Dim z As Integer
+            z = Range("D65536").End(xlUp).Row   'æ ¹æ“šDæ¬„æœ€å¾Œä¸€ç­†è³‡æ–™ä¾†æ‰¾è³‡æ–™å…±å¹¾åˆ—
+            
+            Range("A2", "A" & z).Select
+            Selection.PasteSpecial  'è²¼ä¸Šå…¬å¼
+            
+            Range("A2", "A" & z).Select
+            Selection.Copy
+            Selection.PasteSpecial xlPasteValues 'åªè²¼ä¸Šå€¼
+            
+            Range("B2").Select
+            Selection.Formula = "=CONCATENATE(TEXT($E2,""YYYYMMDD""),""ï¼Œ"",$H2)"   'è¨­å®š B2å„²å­˜æ ¼å€¼
+            Range("B2").Select
+            Selection.Copy
+            
+            Range("B2", "B" & z).Select
+            Selection.PasteSpecial
+            
+            Range("B2", "B" & z).Select
+            Selection.Copy
+            Selection.PasteSpecial xlPasteValues 'åªè²¼ä¸Šå€¼
+            '---------è™•ç†ABæ¬„
+            
+            Range("A1").Select
+            '-------------------------æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_QRCode_iPad-------------------------
+            
             
             Application.CutCopyMode = False
-            Workbooks("­º¥óÀËÅç¬ö¿ıªí(®g¥X¦¨«¬)_iPad.xlsx").Close True   'Ãö³¬¨Ã¦sÀÉ
-            Workbooks("¦¨«¬®g¥X_QCÀËÅç¬ö¿ıªí_iPad.xlsx").Close True   'Ãö³¬¨Ã¦sÀÉ
+            Workbooks("é¦–ä»¶æª¢é©—ç´€éŒ„è¡¨(å°„å‡ºæˆå‹)_iPad.xlsx").Close True   'é—œé–‰ä¸¦å­˜æª”
+            Workbooks("æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_iPad.xlsx").Close True   'é—œé–‰ä¸¦å­˜æª”
+            Workbooks("æˆå‹å°„å‡º_QCæª¢é©—ç´€éŒ„è¡¨_QRCode_iPad.xlsx").Close True   'é—œé–‰ä¸¦å­˜æª”
+
         End If
     Next
 
