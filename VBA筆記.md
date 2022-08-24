@@ -426,11 +426,18 @@ MsgBox "NOTICE:" & Chr(10) & "This is an Important Message!"
 
 ---
 參考資料：  
+* 基礎  
 [VBA 程式設計](https://blog.gtwang.org/programming/vba/)  
 [EXCEL VBA從頭來過-基本語法(上篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%8A%E7%AF%87-c2bc76065ecd)  
 [EXCEL VBA從頭來過-基本語法(中篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%AD%E7%AF%87-4dda73e44eaf)  
 [EXCEL VBA從頭來過-基本語法(下篇)](https://weilihmen.medium.com/excel-vba%E5%BE%9E%E9%A0%AD%E4%BE%86%E9%81%8E-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95-%E4%B8%8B%E7%AF%87-cd3f6a389f34)  
 [VBA + Excel VBA Code Examples](https://www.automateexcel.com/vba-code-examples/)  
+
+* 列出所有文件  
 [VBA code to loop through files in a folder (and sub folders)](https://exceloffthegrid.com/vba-code-loop-files-folder-sub-folders/)  
 [Excel VBA 列出目錄中所有檔案、子目錄教學與範例](https://officeguide.cc/excel-vba-list-files-folders-in-directory-tutorial-examples/)  
+
+* 匯出圖片  
+[【VBA技巧】- N種方法從Excel中導出圖片，看這一篇就夠了](https://www.getit01.com/p2018013129070558/)  
+[Excel VBA 7.78 Excel中的圖片如何批量保存？用VBA快如閃電](https://kknews.cc/zh-tw/career/plk9b2e.html)  
 
