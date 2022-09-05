@@ -123,6 +123,21 @@ Selection.AutoFill Destination:=Range("AV2:AV" & lrow)
 '-----------------總表 巡檢次數-----------------
 
 
+'-----------------總表 抽驗數_外觀-----------------
+Range("AP2").Select
+ActiveCell.Formula = "=IF(AND(AR2>=2, AR2<=544), 32, IF(AND(AR2>=545, AR2<=960), 40,  IF(AND(AR2>=961, AR2<=1632), 48,  IF(AND(AR2>=1633, AR2<=3072), 64,  IF(AR2>=3073, 80, 1)))))"
+Selection.AutoFill Destination:=Range("AP2:AP" & lrow)
+'-----------------總表 抽驗數_外觀-----------------
+
+
+
+'-----------------總表 抽驗數_VIP-----------------
+Range("AQ2").Select
+ActiveCell.Formula = "=IF(AND(AR2>=2, AR2<=170), 5, IF(AND(AR2>=171, AR2<=288), 6,  IF(AND(AR2>=289, AR2<=544), 8,  IF(AND(AR2>=545, AR2<=960), 10,  IF(AR2>=961, 12, 1)))))"
+Selection.AutoFill Destination:=Range("AQ2:AQ" & lrow)
+'-----------------總表 抽驗數_VIP-----------------
+
+
 
 '-----------------總表 抽驗數_外觀+VIP-----------------
 Columns("AR:AR").Select
