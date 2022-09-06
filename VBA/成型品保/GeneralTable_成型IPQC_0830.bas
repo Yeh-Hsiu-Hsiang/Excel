@@ -420,6 +420,34 @@ Selection.PasteSpecial xlPasteValues
 '-----------------品名-----------------
 
 
+
+'-----------------巡檢時段-----------------
+Workbooks(ActWb).Worksheets(2).Activate
+ActiveSheet.Range("AY2", ActiveSheet.Range("AY" & ActiveSheet.Rows.Count).End(xlUp)).Select
+Selection.Copy
+
+Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
+
+ActiveSheet.Range("J" & j).Select
+Selection.PasteSpecial xlPasteValues
+'-----------------巡檢時段-----------------
+
+
+'-----------------巡檢次數-----------------
+Workbooks(ActWb).Worksheets(2).Activate
+ActiveSheet.Range("AZ2", ActiveSheet.Range("AZ" & ActiveSheet.Rows.Count).End(xlUp)).Select
+Selection.Copy
+
+Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
+
+ActiveSheet.Range("K" & j).Select
+Selection.PasteSpecial xlPasteValues
+'-----------------巡檢次數-----------------
+
+
+
+
+
 '-----------------機台-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 ActiveSheet.Range("K2", ActiveSheet.Range("K" & ActiveSheet.Rows.Count).End(xlUp)).Select
