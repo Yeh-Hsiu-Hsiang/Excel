@@ -1,11 +1,10 @@
-
 Sub GeneralTable_成型IPQC_0830()
 
 Dim ActWb As String, i, j, k As Long
     
 ActWb = ActiveWorkbook.Name
 
-Range("A:G, N:P, Y:Z, BA:BB, BN:BO, CY:DB, DO:DR, EE:EH, GM:GM, HE:HF, IW:IX").Select
+Range("A:G, N:P, Y:Z, AM:AM, BA:BA, BM:BO, CL:CL, CY:DB, DM:DM, DO:DR, EE:EH, ES:ES, FP:FP, GM:GM, HE:HF, IU:IU, IW:IX").Select
 Selection.Copy
 
 Worksheets.Add After:=ActiveWorkbook.Worksheets(ActiveWorkbook.Worksheets.Count)
@@ -41,6 +40,90 @@ Selection.AutoFill Destination:=Range("D2:D" & lrow)
 '-----------------總表 項目-----------------
 
 
+
+'-----------------總表 IPQC判定_08~10-----------------
+Columns("P:P").Select
+Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+Range("P1") = "IPQC判定_08~10時段"
+Range("P2").Select
+ActiveCell.Formula = "=""08~10(20~22)"""
+Selection.AutoFill Destination:=Range("P2:P" & lrow)
+'-----------------總表 IPQC判定_08~10-----------------
+
+
+
+'-----------------總表 IPQC判定_10~12-----------------
+Columns("S:S").Select
+Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+Range("S1") = "IPQC判定_10~12時段"
+Range("S2").Select
+ActiveCell.Formula = "=""10~12(22~24)"""
+Selection.AutoFill Destination:=Range("S2:S" & lrow)
+'-----------------總表 IPQC判定_10~12-----------------
+
+
+'-----------------總表 IPQC判定_12~14-----------------
+Columns("W:W").Select
+Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+Range("W1") = "IPQC判定_12~14時段"
+Range("W2").Select
+ActiveCell.Formula = "=""12~14(24~02)"""
+Selection.AutoFill Destination:=Range("W2:W" & lrow)
+'-----------------總表 IPQC判定_12~14-----------------
+
+
+'-----------------總表 IPQC判定_14~16-----------------
+Columns("AC:AC").Select
+Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+Range("AC1") = "IPQC判定_14~16時段"
+Range("AC2").Select
+ActiveCell.Formula = "=""14~16(02~04)"""
+Selection.AutoFill Destination:=Range("AC2:AC" & lrow)
+'-----------------總表 IPQC判定_14~16-----------------
+
+
+
+'-----------------總表 IPQC判定_16~18-----------------
+Columns("AM:AM").Select
+Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+Range("AM1") = "IPQC判定_16~18時段"
+Range("AM2").Select
+ActiveCell.Formula = "=""16~18(04~06)"""
+Selection.AutoFill Destination:=Range("AM2:AM" & lrow)
+'-----------------總表 IPQC判定_16~18-----------------
+
+
+'-----------------總表 IPQC判定_18~20-----------------
+Columns("AO:AO").Select
+Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+Range("AO1") = "IPQC判定_18~20時段"
+Range("AO2").Select
+ActiveCell.Formula = "=""18~20(06~08)"""
+Selection.AutoFill Destination:=Range("AO2:AO" & lrow)
+'-----------------總表 IPQC判定_18~20-----------------
+
+
+'-----------------總表 巡檢時段-----------------
+Range("AV1") = "巡檢時段"
+Range("AV2").Select
+ActiveCell.Formula = "=IF(O2="""",IF(R2="""",IF(V2="""",IF(AB2="""",IF(AL2="""",IF(AN2="""","""",AO2),IF(AN2="""",AM2,AM2&"";""&AO2)),IF(AL2="""",IF(AN2="""",AC2,AC2&"";""&AO2),IF(AN2="""",AC2&"";""&AM2,AC2&"";""&AM2&"";""&AO2))),IF(AB2="""",IF(AL2="""",IF(AN2="""",W2,W2&"";""&AO2),IF(AN2="""",W2&"";""&AM2,W2&"";""&AM2&"";""&AO2)),IF(AL2="""",IF(AN2="""",W2&"";""&AC2,W2&"";""&AC2&"";""&AO2),IF(AN2="""",W2&"";""&AC2&"";""&AM2,W2&"";""&AC2&"";""&AM2&"";""&AO2)))),IF(V2="""",IF(AB2="""",IF(AL2="""",IF(AN2="""",S2,S2&"";""&AO2),IF(AN2="""",S2&"";""&AM2,S2&"";""&AM2&"";""&AO2))," & _
+                     "IF(AL2="""",IF(AN2="""",S2&"";""&AC2,S2&"";""&AC2&"";""&AO2),IF(AN2="""",S2&"";""&AC2&"";""&AM2,S2&"";""&AC2&"";""&AM2&"";""&AO2))),IF(AB2="""",IF(AL2="""",IF(AN2="""",S2&"";""&W2,S2&"";""&W2&"";""&AO2),IF(AN2="""",S2&"";""&W2&"";""&AM2,S2&"";""&W2&"";""&AM2&"";""&AO2)),IF(AL2="""",IF(AN2="""",S2&"";""&W2&"";""&AC2,S2&"";""&W2&"";""&AC2&"";""&AO2),IF(AN2="""",S2&"";""&W2&"";""&AC2&"";""&AM2,S2&"";""&W2&"";""&AC2&"";""&AM2&"";""&AO2))))),IF(R2="""",IF(V2="""",IF(AB2="""",IF(AL2="""",IF(AN2="""",P2,P2&"";""&AO2),IF(AN2="""",P2&"";""&AM2,O2&"";""&AM2&"";""&AO2))," & _
+                     "IF(AL2="""",IF(AN2="""",P2&"";""&AC2,P2&"";""&AC2&"";""&AO2),IF(AN2="""",P2&"";""&AC2&"";""&AM2,P2 &"";""&AC2&"";""&AM2&"";""&AO2))),IF(AB2="""",IF(AL2="""",IF(AN2="""",P2&"";""&W2,P2&"";""&W2&"";""&AO2),IF(AN2="""",P2&"";""&W2&"";""&AM2,P2&"";""&W2&"";""&AM2&"";""&AO2)),IF(AL2="""",IF(AN2="""",P2&"";""&W2&"";""&AC2,P2&"";""&W2&"";""&AC2&"";""&AO2),IF(AN2="""",P2&"";""&W2&"";""&AC2&"";""&AM2,P2&"";""&W2&"";""&AC2&"";""&AM2&"";""&AO2)))),IF(V2="""",IF(AB2="""",IF(AL2="""",IF(AN2="""",P2&"";""&S2,P2&"";""&S2&"";""&AO2),IF(AN2="""",P2&"";""&S2&"";""&AM2,P2&"";""&S2&"";""&AM2&"";""&AO2))," & _
+                     "IF(AL2="""",IF(AN2="""",P2&"";""&S2&"";""&AC2,S2&"";""&AC2&"";""&AO2),IF(AN2="""",P2&"";""&S2&"";""&AC2&"";""&AM2,P2&"";""&S2&"";""&AC2&"";""&AM2&"";""&AO2))),IF(AB2="""",IF(AL2="""",IF(AN2="""",P2&"";""&S2&"";""&W2,P2&"";""&S2&"";""&W2&"";""&AO2),IF(AN2="""",P2&"";""&S2&"";""&W2&"";""&AM2,P2&"";""&S2&"";""&W2&"";""&AM2&"";""&AO2)),IF(AL2="""",IF(AN2="""",P2&"";""&S2&"";""&W2&"";""&AC2,P2&"";""&S2&"";""&W2&"";""&AC2&"";""&AO2),IF(AN2="""",P2&"";""&S2&"";""&W2&"";""&AC2&"";""&AM2,P2&"";""&S2&"";""&W2&"";""&AC2&"";""&AM2&"";""&AO2))))))"
+Selection.AutoFill Destination:=Range("AV2:AV" & lrow)
+'-----------------總表 巡檢時段-----------------
+
+
+'-----------------總表 巡檢次數-----------------
+Columns("AW:AW").Select
+Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+Range("AW1") = "巡檢次數"
+Range("AW2").Select
+ActiveCell.Formula = "=COUNTA(O2,R2,V2,AB2,AL2,AN2)"
+Selection.AutoFill Destination:=Range("AW2:AW" & lrow)
+'-----------------總表 巡檢次數-----------------
+
+
 '-----------------總表 機台-----------------
 Columns("K:K").Select
 Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
@@ -51,137 +134,152 @@ Selection.AutoFill Destination:=Range("K2:K" & lrow)
 '-----------------總表 機台-----------------
 
 
+'-----------------總表 抽驗數_外觀-----------------
+Range("AR2").Select
+ActiveCell.Formula = "=IF(AND(AT2>=2, AT2<=544), 32, IF(AND(AT2>=545, AT2<=960), 40,  IF(AND(AT2>=961, AT2<=1632), 48,  IF(AND(AT2>=1633, AT2<=3072), 64,  IF(AT2>=3073, 80, 1)))))"
+Selection.AutoFill Destination:=Range("AR2:AR" & lrow)
+'-----------------總表 抽驗數_外觀-----------------
+
+
+
+'-----------------總表 抽驗數_VIP-----------------
+Range("AS2").Select
+ActiveCell.Formula = "=IF(AND(AT2>=2, AT2<=170), 5, IF(AND(AT2>=171, AT2<=288), 6,  IF(AND(AT2>=289, AT2<=544), 8,  IF(AND(AT2>=545, AT2<=960), 10,  IF(AT2>=961, 12, 1)))))"
+Selection.AutoFill Destination:=Range("AS2:AS" & lrow)
+'-----------------總表 抽驗數_VIP-----------------
+
+
+
 
 '-----------------總表 抽驗數_外觀+VIP-----------------
-Columns("AI:AI").Select
+Columns("AT:AT").Select
 Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
-Range("AI1") = "抽驗數_外觀+VIP"
-Range("AI2").Select
-ActiveCell.Formula = "=AG2+AH2"
-Selection.AutoFill Destination:=Range("AI2:AI" & lrow)
+Range("AT1") = "抽驗數_外觀+VIP"
+Range("AT2").Select
+ActiveCell.Formula = "=AR2+AS2"
+Selection.AutoFill Destination:=Range("AT2:AT" & lrow)
 '-----------------總表 抽驗數_外觀+VIP-----------------
 
 
 
 '-----------------總表 不良數-----------------
-Columns("AF:AF").Select
+Columns("AM:AM").Select
 Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
-Range("AF1") = "不良數總計"
-Range("AF2").Select
-ActiveCell.Formula = "=IF(AND(W2="""", AA2="""", AE2=""""), 0, W2+AA2+AE2)"
-Selection.AutoFill Destination:=Range("AF2:AF" & lrow)
+Range("AM1") = "不良數總計"
+Range("AM2").Select
+ActiveCell.Formula = "=IF(AND(AB2="""", AH2="""", AL2=""""), 0, AB2+AH2+AL2)"
+Selection.AutoFill Destination:=Range("AM2:AM" & lrow)
 '-----------------總表 不良數-----------------
 
 
 '-----------------總表 不良率-----------------
-Range("AM1") = "不良率"
-Range("AM2").Select
-ActiveCell.Formula = "=IFERROR(AF2/AJ2, 0)"
-Selection.AutoFill Destination:=Range("AM2:AM" & lrow)
+Range("BA1") = "不良率"
+Range("BA2").Select
+ActiveCell.Formula = "=IFERROR(AM2/AU2, 0)"
+Selection.AutoFill Destination:=Range("BA2:BA" & lrow)
 '-----------------總表 不良率-----------------
 
 
 
 '-----------------總表 判定-----------------
-Range("AN1") = "判定"
-Range("AN2").Select
+Range("BB1") = "判定"
+Range("BB2").Select
 Application.CutCopyMode = False
-ActiveCell.Formula = "=IF(AF2=0, ""合格"", ""不合格"")"
-Range("AN2").Select
-Selection.AutoFill Destination:=Range("AN2:AN" & lrow)
+ActiveCell.Formula = "=IF(AM2=0, ""合格"", ""不合格"")"
+Range("BB2").Select
+Selection.AutoFill Destination:=Range("BB2:BB" & lrow)
 '-----------------總表 判定-----------------
 
 
 '-----------------總表 批不良率-----------------
-Range("AO1") = "批不良率"
-Range("AO2").Select
-ActiveCell.Formula = "=IFERROR(AF2/AG2, 0)"
-Selection.AutoFill Destination:=Range("AO2:AO" & lrow)
+Range("BC1") = "批不良率"
+Range("BC2").Select
+ActiveCell.Formula = "=IFERROR(AM2/AV2, 0)"
+Selection.AutoFill Destination:=Range("BC2:BC" & lrow)
 '-----------------總表 批不良率-----------------
 
 
 '-----------------總表 技術員-----------------
-Range("AP1") = "技術員"
-Range("AP2").Select
+Range("BD1") = "技術員"
+Range("BD2").Select
 ActiveCell.Formula = "=IF(AND(M2="""",O2=""""),"""", M2 & "" "" & O2)"
-Selection.AutoFill Destination:=Range("AP2:AP" & lrow)
+Selection.AutoFill Destination:=Range("BD2:BD" & lrow)
 '-----------------總表 技術員-----------------
 
 
 '-----------------總表 不良1原因-----------------
-Range("AQ1") = "不良1原因"
-Range("AQ2").Select
-ActiveCell.Formula = "=IF(T2 = """","""", T2 & ""，"" & U2 & ""，"" & V2)"
-Range("AQ2").Select
-Selection.AutoFill Destination:=Range("AQ2:AQ" & lrow)
+Range("BE1") = "不良1原因"
+Range("BE2").Select
+ActiveCell.Formula = "=IF(Y2 = """","""", Y2 & ""，"" & Z2 & ""，"" & AA2)"
+Range("BE2").Select
+Selection.AutoFill Destination:=Range("BE2:BE" & lrow)
 '-----------------總表 不良1原因-----------------
 
 
 '-----------------總表 不良2原因-----------------
-Range("AR1") = "不良2原因"
-Range("AR2").Select
-ActiveCell.Formula = "=IF(X2 = """","""", X2 & ""，"" & Y2 & ""，"" & Z2)"
-Range("AR2").Select
-Selection.AutoFill Destination:=Range("AR2:AR" & lrow)
+Range("BF1") = "不良2原因"
+Range("BF2").Select
+ActiveCell.Formula = "=IF(AE2 = """","""", AE2 & ""，"" & AF2 & ""，"" & AG2)"
+Range("BF2").Select
+Selection.AutoFill Destination:=Range("BF2:BF" & lrow)
 '-----------------總表 不良2原因-----------------
 
 
 '-----------------總表 不良3原因-----------------
-Range("AS1") = "不良3原因"
-Range("AS2").Select
-ActiveCell.Formula = "=IF(AB2 = """","""", AB2 & ""，"" & AC2 & ""，"" & AD2)"
-Range("AS2").Select
-Selection.AutoFill Destination:=Range("AS2:AS" & lrow)
+Range("BG1") = "不良3原因"
+Range("BG2").Select
+ActiveCell.Formula = "=IF(AI2 = """","""", AI2 & ""，"" & AJ2 & ""，"" & AK2)"
+Range("BG2").Select
+Selection.AutoFill Destination:=Range("BG2:BG" & lrow)
 '-----------------總表 不良3原因-----------------
 
 
 '-----------------總表 重工不良率-----------------
-Range("AT1") = "重工不良率"
-Range("AT2").Select
-ActiveCell.Formula = "=IFERROR(S2/R2, 0)"
-Range("AT2").Select
-Selection.AutoFill Destination:=Range("AT2:AT" & lrow)
+Range("BH1") = "重工不良率"
+Range("BH2").Select
+ActiveCell.Formula = "=IFERROR(V2/U2, 0)"
+Range("BH2").Select
+Selection.AutoFill Destination:=Range("BH2:BH" & lrow)
 '-----------------總表 重工不良率-----------------
 
 
 '-----------------總表 重工資訊-----------------
-Range("AU1") = "重工資訊"
-Range("AU2").Select
-ActiveCell.Formula = "=IF(R2="""","""",""重工數量 = "" & R2)"
-Range("AU2").Select
-Selection.AutoFill Destination:=Range("AU2:AU" & lrow)
+Range("BI1") = "重工資訊"
+Range("BI2").Select
+ActiveCell.Formula = "=IF(U2="""","""",""重工數量 = "" & U2)"
+Range("BI2").Select
+Selection.AutoFill Destination:=Range("BI2:BI" & lrow)
 '-----------------總表 重工資訊-----------------
 
 
 '-----------------總表 NG數-----------------
-Range("AV1") = "NG數"
-Range("AV2").Select
-ActiveCell.Formula = "=IF(AF2>0, 1, 0)"
-Range("AV2").Select
-Selection.AutoFill Destination:=Range("AV2:AV" & lrow)
+Range("BJ1") = "NG數"
+Range("BJ2").Select
+ActiveCell.Formula = "=IF(AM2>0, 1, 0)"
+Range("BJ2").Select
+Selection.AutoFill Destination:=Range("BJ2:BJ" & lrow)
 '-----------------總表 NG數-----------------
 
 
 '-----------------總表 NG數資料-----------------
 For k = 2 To 5000
 
-    If Range("AN" & k) = "不合格" Then
+    If Range("BB" & k) = "不合格" Then
         If Range("C" & k) = Range("C" & k).Offset(-1, 0) And _
             Range("F" & k) = Range("F" & k).Offset(-1, 0) And _
-            Range("H" & k) = Range("H" & k).Offset(-1, 0) And _
-            Range("W" & k) = Range("W" & k).Offset(-1, 0) Then
+            Range("H" & k) = Range("H" & k).Offset(-1, 0) Then
         
             GoTo ContinueForLoop
         Else
-            For m = 1 To Range("AV" & k)
-                Range("A" & k & ":AV" & k).Select
+            For M = 1 To Range("BJ" & k)
+                Range("A" & k & ":BJ" & k).Select
                 Selection.Copy
 
-                Range("A" & k & ":AV" & k).Offset(1, 0).Select
+                Range("A" & k & ":BJ" & k).Offset(1, 0).Select
                 Selection.Insert Shift:=xlDown
-            Next m
+            Next M
 
-            Range("AF" & k) = 0
+            Range("AM" & k) = 0
         End If
     End If
     
@@ -274,7 +372,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------檢驗員A-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("AK2", ActiveSheet.Range("AK" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("AW2", ActiveSheet.Range("AW" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -287,7 +385,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------檢驗員B-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("AL2", ActiveSheet.Range("AL" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("AX2", ActiveSheet.Range("AX" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -336,7 +434,7 @@ Selection.PasteSpecial xlPasteValues
 
 '-----------------生產數-----------------
 Workbooks(ActWb).Worksheets(2).Activate
-ActiveSheet.Range("AG2", ActiveSheet.Range("AG" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("AV2", ActiveSheet.Range("AV" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -349,7 +447,7 @@ Selection.PasteSpecial xlPasteValues
 
 '-----------------檢驗數外觀+VIP-----------------
 Workbooks(ActWb).Worksheets(2).Activate
-ActiveSheet.Range("AJ2", ActiveSheet.Range("AJ" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("AU2", ActiveSheet.Range("AU" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -361,7 +459,7 @@ Selection.PasteSpecial xlPasteValues
 
 '-----------------不良數-----------------
 Workbooks(ActWb).Worksheets(2).Activate
-ActiveSheet.Range("AF2", ActiveSheet.Range("AF" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("AM2", ActiveSheet.Range("AM" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -373,7 +471,7 @@ Selection.PasteSpecial xlPasteValues
 
 '-----------------不良率-----------------
 Workbooks(ActWb).Worksheets(2).Activate
-ActiveSheet.Range("AM2", ActiveSheet.Range("AM" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BA2", ActiveSheet.Range("BA" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -385,7 +483,7 @@ Selection.PasteSpecial xlPasteValues
 
 '-----------------判定-----------------
 Workbooks(ActWb).Worksheets(2).Activate
-ActiveSheet.Range("AN2", ActiveSheet.Range("AN" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BB2", ActiveSheet.Range("BB" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -398,7 +496,7 @@ Selection.PasteSpecial xlPasteValues
 
 '-----------------批不良率-----------------
 Workbooks(ActWb).Worksheets(2).Activate
-ActiveSheet.Range("AO2", ActiveSheet.Range("AO" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BC2", ActiveSheet.Range("BC" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -411,7 +509,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------技術員-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("AP2", ActiveSheet.Range("AP" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BD2", ActiveSheet.Range("BD" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -450,7 +548,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------作業員3-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("P2", ActiveSheet.Range("P" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("R2", ActiveSheet.Range("R" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -463,7 +561,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------不良1原因-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("AQ2", ActiveSheet.Range("AQ" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BE2", ActiveSheet.Range("BE" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -477,7 +575,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------不良2原因-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("AR2", ActiveSheet.Range("AR" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BF2", ActiveSheet.Range("BF" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -490,7 +588,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------不良3原因-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("AS2", ActiveSheet.Range("AS" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BG2", ActiveSheet.Range("BG" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -503,7 +601,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------重工資訊(重工數)-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("AU2", ActiveSheet.Range("AU" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BI2", ActiveSheet.Range("BI" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -517,7 +615,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------重工不良數-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("S2", ActiveSheet.Range("S" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("V2", ActiveSheet.Range("V" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
@@ -530,7 +628,7 @@ Selection.PasteSpecial xlPasteValues
 '-----------------重工不良率-----------------
 Workbooks(ActWb).Worksheets(2).Activate
 
-ActiveSheet.Range("AT2", ActiveSheet.Range("AT" & ActiveSheet.Rows.Count).End(xlUp)).Select
+ActiveSheet.Range("BH2", ActiveSheet.Range("BH" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
 Workbooks("品保IPQC_FQC日報系統(成型).xlsm").Worksheets("成型檢驗紀錄履歷").Activate
