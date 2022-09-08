@@ -307,7 +307,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------日期-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("E2", ActiveSheet.Range("E" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -320,7 +320,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------客戶-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("F2", ActiveSheet.Range("F" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -332,7 +332,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------製令單號-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("I2", ActiveSheet.Range("I" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -345,7 +345,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------班別-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("C2", ActiveSheet.Range("C" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -358,7 +358,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------檢驗員A-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("AW2", ActiveSheet.Range("AW" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -371,7 +371,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------檢驗員B-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("AX2", ActiveSheet.Range("AX" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -384,7 +384,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------料號-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("G2", ActiveSheet.Range("G" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -397,7 +397,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------品名-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("H2", ActiveSheet.Range("H" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -410,7 +410,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------巡檢時段-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("AY2", ActiveSheet.Range("AY" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -422,7 +422,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------巡檢次數-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("AZ2", ActiveSheet.Range("AZ" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -437,7 +437,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------機台-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("K2", ActiveSheet.Range("K" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -449,7 +449,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------生產數-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("AR2", ActiveSheet.Range("AR" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -462,7 +462,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------檢驗數外觀+VIP-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("AU2", ActiveSheet.Range("AU" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -474,7 +474,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------不良數-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("AM2", ActiveSheet.Range("AM" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -486,7 +486,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------不良率-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("BA2", ActiveSheet.Range("BA" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -498,7 +498,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------判定-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("BB2", ActiveSheet.Range("BB" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -511,7 +511,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------批不良率-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 ActiveSheet.Range("BC2", ActiveSheet.Range("BC" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
 
@@ -523,7 +523,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------技術員-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("BD2", ActiveSheet.Range("BD" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -536,7 +536,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------作業員1-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("L2", ActiveSheet.Range("L" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -549,7 +549,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------作業員2-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("N2", ActiveSheet.Range("N" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -562,7 +562,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------作業員3-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("R2", ActiveSheet.Range("R" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -575,7 +575,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------不良1原因-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("BE2", ActiveSheet.Range("BE" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -589,7 +589,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------不良2原因-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("BF2", ActiveSheet.Range("BF" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -602,7 +602,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------不良3原因-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("BG2", ActiveSheet.Range("BG" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -615,7 +615,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------重工資訊(重工數)-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("BI2", ActiveSheet.Range("BI" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -629,7 +629,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------重工不良數-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("V2", ActiveSheet.Range("V" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
@@ -642,7 +642,7 @@ Selection.PasteSpecial xlPasteValues
 
 
 '-----------------重工不良率-----------------
-Workbooks(ActWb).Worksheets(2).Activate
+Workbooks(ActWb).Worksheets(3).Activate
 
 ActiveSheet.Range("BH2", ActiveSheet.Range("BH" & ActiveSheet.Rows.Count).End(xlUp)).Select
 Selection.Copy
