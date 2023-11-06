@@ -3,51 +3,37 @@ Sub 現場沖壓用電基線總表_重設()
     ActWb = ActiveWorkbook.Name
     Workbooks(ActWb).Worksheets("現場沖壓用電基線總表").Activate
     
-    Range("C3", ActiveSheet.Range("F" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("H3", ActiveSheet.Range("I" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("L3", ActiveSheet.Range("O" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("R3", ActiveSheet.Range("R" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("U3", ActiveSheet.Range("X" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("AA3", ActiveSheet.Range("AA" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("AD3", ActiveSheet.Range("AG" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("AJ3", ActiveSheet.Range("AJ" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("AM3", ActiveSheet.Range("AP" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("AS3", ActiveSheet.Range("AS" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("AV3", ActiveSheet.Range("AY" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("BB3", ActiveSheet.Range("BB" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("BE3", ActiveSheet.Range("BH" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("BK3", ActiveSheet.Range("BK" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("BN3", ActiveSheet.Range("BQ" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("BT3", ActiveSheet.Range("BT" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("BW3", ActiveSheet.Range("BZ" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("CC3", ActiveSheet.Range("CC" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("CF3", ActiveSheet.Range("CI" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("CL3", ActiveSheet.Range("CL" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("CO3", ActiveSheet.Range("CR" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("CU3", ActiveSheet.Range("CU" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("CX3", ActiveSheet.Range("DA" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("DD3", ActiveSheet.Range("DD" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("DG3", ActiveSheet.Range("DJ" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("DM3", ActiveSheet.Range("DM" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("DP3", ActiveSheet.Range("DS" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("DV3", ActiveSheet.Range("DV" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
-    Range("DY3", ActiveSheet.Range("EB" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    Range("EE3", ActiveSheet.Range("EE" & ActiveSheet.Rows.Count).End(xlUp)).ClearContents '清空舊有資料
-    
+    Dim x As Integer
+    x = Worksheets("現場沖壓用電基線總表").Range("A65536").End(xlUp).Row
+
+    For i = 3 To x
+       For j = Range("C1") To Range("JL1") Step 9
+       
+            Cells(i, j).Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.ClearContents
+            
+            Cells(i, j + 1).Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.ClearContents
+
+            Cells(i, j + 2).Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.ClearContents
+
+            Cells(i, j + 3).Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.ClearContents
+
+            Cells(i, j + 6).Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.ClearContents
+                  
+            Application.CutCopyMode = False
+        
+        Next
+    Next
+      
 End Sub
 
 Sub 現場沖壓用電基線總表_輸入()
@@ -59,7 +45,7 @@ Sub 現場沖壓用電基線總表_輸入()
     Worksheets("現場沖壓用電基線總表").Activate
     
     Dim x As Integer
-    x = Worksheets("現場沖壓用電基線總表").Range("A65536").End(xlUp).Row   '根據D欄最後一筆資料來找資料共幾列
+    x = Worksheets("現場沖壓用電基線總表").Range("A65536").End(xlUp).Row
     
     
     For i = 3 To x
@@ -77,15 +63,12 @@ Sub 現場沖壓用電基線總表_輸入()
                     Application.CutCopyMode = False
                     
                     Range("AH3:AJ3").ClearContents
+                    Range("AH6").ClearContents
 
                     Exit For
                 End If
             Next
         End If
     Next
-    
-
-
-
     
 End Sub
