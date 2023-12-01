@@ -67,6 +67,7 @@ Sub 貨車用油基線總表_輸入()
                     Application.CutCopyMode = False
                     
                     Range("R3:T3").ClearContents
+                    Range("U5").ClearContents
 
                     Exit For
                 End If
