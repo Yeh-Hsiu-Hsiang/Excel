@@ -30,6 +30,8 @@ Sub 現場沖壓用電基線總表_重設()
             Selection.ClearContents
                   
             Application.CutCopyMode = False
+            
+            Range("C3").Select
         
         Next
     Next
@@ -63,7 +65,8 @@ Sub 現場沖壓用電基線總表_輸入()
                     Application.CutCopyMode = False
                     
                     Range("AH3:AJ3").ClearContents
-                    Range("AH6").ClearContents
+                    Range("AG6").ClearContents
+                    Range("AI6").ClearContents
 
                     Exit For
                 End If
