@@ -39,7 +39,7 @@ End Sub
 
 Sub 貨車用油基線總表_輸入()
     
-    number_plate = Worksheets("貨車用油基線表單").Range("P3").Text
+    number_plate = Worksheets("貨車用油基線表").Range("P3").Text
     
     '--------------------------------
     
@@ -53,16 +53,16 @@ Sub 貨車用油基線總表_輸入()
         If Range("A" & i) = number_plate Then
             For j = Range("B1") To Range("IG1") Step 8
                 If Cells(i, j) = "" Then
-                    Worksheets("貨車用油基線表單").Range("Q3:R3").Copy
+                    Worksheets("貨車用油基線表").Range("Q3:R3").Copy
                     Worksheets("貨車用油基線總表").Cells(i, j).PasteSpecial xlPasteValues
                     
-                    Worksheets("貨車用油基線表單").Range("S3").Copy
+                    Worksheets("貨車用油基線表").Range("S3").Copy
                     Worksheets("貨車用油基線總表").Cells(i, j + 3).PasteSpecial xlPasteValues
                     
-                    Worksheets("貨車用油基線表單").Range("T3:U3").Copy
+                    Worksheets("貨車用油基線表").Range("T3:U3").Copy
                     Worksheets("貨車用油基線總表").Cells(i, j + 5).PasteSpecial xlPasteValues
 
-                    Worksheets("貨車用油基線表單").Activate
+                    Worksheets("貨車用油基線表").Activate
                     Range("P3").Select
                     Application.CutCopyMode = False
                     
