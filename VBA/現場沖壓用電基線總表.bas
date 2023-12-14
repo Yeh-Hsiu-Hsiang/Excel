@@ -40,7 +40,7 @@ End Sub
 
 Sub 現場沖壓用電基線總表_輸入()
     
-    machine_number = Worksheets("現場沖壓用電基線表單").Range("AE3").Text
+    machine_number = Worksheets("現場沖壓用電基線表").Range("AE3").Text
     
     '--------------------------------
     
@@ -54,13 +54,13 @@ Sub 現場沖壓用電基線總表_輸入()
         If Range("A" & i) = machine_number Then
             For j = Range("C1") To Range("JL1") Step 9
                 If Cells(i, j) = "" Then
-                    Worksheets("現場沖壓用電基線表單").Range("AF3:AI3").Copy
+                    Worksheets("現場沖壓用電基線表").Range("AF3:AI3").Copy
                     Worksheets("現場沖壓用電基線總表").Cells(i, j).PasteSpecial xlPasteValues
                     
-                    Worksheets("現場沖壓用電基線表單").Range("AJ3").Copy
+                    Worksheets("現場沖壓用電基線表").Range("AJ3").Copy
                     Worksheets("現場沖壓用電基線總表").Cells(i, j + 6).PasteSpecial xlPasteValues
 
-                    Worksheets("現場沖壓用電基線表單").Activate
+                    Worksheets("現場沖壓用電基線表").Activate
                     Range("AE3").Select
                     Application.CutCopyMode = False
                     
