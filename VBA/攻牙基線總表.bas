@@ -46,7 +46,6 @@ Sub 攻牙基線總表_輸入()
                     Application.CutCopyMode = False
                     
                     Range("AC3:AD3").ClearContents
-                    Range("AF3").ClearContents
                     Range("AE6").ClearContents
                     Range("AG6").ClearContents
 
